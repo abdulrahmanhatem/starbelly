@@ -1,0 +1,16 @@
+/* Global styles */
+:root{
+    --white-color: #fff;
+    --off-white: #ccc;
+    --gradient-image: linear-gradient(to right,#fc2547 50%, #ff5a00 100%)
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    background-image: url('../images/bg-1.jpg');
+    height: 100vh;
+}
