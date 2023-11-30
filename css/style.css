@@ -1,16 +1,98 @@
 /* Global styles */
-:root{
-    --white-color: #fff;
-    --off-white: #ccc;
-    --gradient-image: linear-gradient(to right,#fc2547 50%, #ff5a00 100%)
+@font-face {
+    font-family: "poppins", sans-serif;
+    src: url(../fonts/Poppins-Medium.ttf), 
+        url(../fonts/Poppins-Light.ttf),
+        url(../fonts/Poppins-Thin.ttf),
+        url(../fonts/Poppins-Bold.ttf),
+        url(../fonts/Poppins-Black.ttf);
 }
 
-body{
-    padding: 0;
-    margin: 0;
+:root{
+    --white: #fff;
+    --red : #d2545b;
+    --off-white: #ccc;
+    --gradient-image: linear-gradient(to right,#fc2547 50%, #ff5a00 100%);
+    --main-font: "poppins", sans-serif;
+    
 }
+body{
+    margin: 0;
+    font-family: var(--main-font);
+}
+main{
+    position: relative;
+}
+a{
+    text-decoration: none;
+    color: var(--white);
+}
+/* Nav styles */
+nav{
+    background-image: url(../images/bg-1.jpg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+}
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex: 0 1 35%;
+    justify-content: space-around;
+    align-items: center;
+}
+nav ul a{
+    font-size: 1.2rem;
+    letter-spacing: .05rem;
+}
+.account-links{
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex: 0 1 12%;
+    justify-content: center;
+}
+.account-links .cart {
+    margin-inline-end: 1.3rem;
+    position: relative;
+}
+.account-links .cart .badge{
+    position: absolute;
+    background: var(--red);
+    color: var(--white);
+    border-radius: 50%;
+    width: 1.2rem;
+    height: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: .8rem;
+    top: -1.3rem;
+    left: 0.8rem;
+}
+.account-links .account ul{
+    display: none;
+}
+.account-links svg{
+    fill: var(--white);
+    width: 1.2rem;
+}
+
+
+
+
 
 header{
     background-image: url('../images/bg-1.jpg');
     height: 100vh;
+}
+svg{
+    width: 1rem;
 }
