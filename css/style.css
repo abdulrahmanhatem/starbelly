@@ -84,11 +84,6 @@ nav ul a{
     fill: var(--white);
     width: 1.2rem;
 }
-
-
-
-
-
 header{
     background-image: url('../images/bg-1.jpg');
     height: 100vh;
