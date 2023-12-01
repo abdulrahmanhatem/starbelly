@@ -85,10 +85,12 @@ nav ul a{
     width: 1.2rem;
 }
 
+
 header{
     background-image: url('../images/bg-1.jpg');
     height: 100vh;
 }
+
 
 svg{
     width: 1rem;
