@@ -128,19 +128,30 @@ header .home{
     flex-grow: 1;
 }
 header .home .content {
-    height: 100vh;
+    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 40%;
     margin: auto;
     font-size: .8rem;
     text-align: center;
+    margin-top: 10rem;
 }
 header .home .content span, header .home .content p {
     color: var(--white-50);
 }
-header .home .content h1{
+header .home .content h1 {
     font-family: var(--grand-font);
+    font-size: 3rem;
+    width: 50%;
+    font-weight: 100;
+}
+header .home .content p{
+    font-size: .6rem;
+}
+.images{
+    position: absolute;
+    z-index: -1;
 }
