@@ -1,11 +1,15 @@
 /* Global styles */
 @font-face {
-    font-family: "poppins", sans-serif;
+    font-family: "poppins";
     src: url(../fonts/Poppins-Medium.ttf), 
         url(../fonts/Poppins-Light.ttf),
         url(../fonts/Poppins-Thin.ttf),
         url(../fonts/Poppins-Bold.ttf),
         url(../fonts/Poppins-Black.ttf);
+}
+@font-face {
+    font-family: "grand-hotel";
+    src: url(../fonts/GrandHotel-Regular.ttf);
 }
 :root{
     --white-100: #fff;
@@ -17,6 +21,7 @@
     --red : #d2545b;
     --gradient-image: linear-gradient(to right,#fc2547 50%, #ff5a00 100%);
     --main-font: "poppins", sans-serif; 
+    --grand-font: "grand-hotel", sans-serif; 
 }
 body{
     margin: 0;
@@ -135,4 +140,7 @@ header .home .content {
 }
 header .home .content span, header .home .content p {
     color: var(--white-50);
+}
+header .home .content h1{
+    font-family: var(--grand-font);
 }
