@@ -7,7 +7,6 @@
         url(../fonts/Poppins-Bold.ttf),
         url(../fonts/Poppins-Black.ttf);
 }
-
 :root{
     --white: #fff;
     --red : #d2545b;
@@ -27,6 +26,7 @@ a{
     text-decoration: none;
     color: var(--white);
 }
+
 /* Nav styles */
 nav{
     background-image: url(../images/bg-1.jpg);
@@ -85,13 +85,28 @@ nav ul a{
     width: 1.2rem;
 }
 
-
+/* Start Header */
 header{
     background-image: url('../images/bg-1.jpg');
     height: 100vh;
+    display: flex;
 }
-
-
+header aside {
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    align-items: center;
+}
+header aside ul {
+    list-style: none;
+    height: 30%;
+    margin-block: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0;
+}
 svg{
-    width: 1rem;
+    width: .85rem;
+    fill: var(--white);
 }
