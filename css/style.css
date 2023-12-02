@@ -1,6 +1,6 @@
 /* Global styles */
 @font-face {
-    font-family: "poppins";
+    font-family: "Hoppins";
     src: url(../fonts/Poppins-Medium.ttf), 
         url(../fonts/Poppins-Light.ttf),
         url(../fonts/Poppins-Thin.ttf),
@@ -8,8 +8,12 @@
         url(../fonts/Poppins-Black.ttf);
 }
 @font-face {
-    font-family: "grand-hotel";
+    font-family: "Grand-Hotel";
     src: url(../fonts/GrandHotel-Regular.ttf);
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Black.ttf");
 }
 :root{
     --white-100: #fff;
@@ -18,10 +22,15 @@
     --white-70: #ccc;
     --white-60: #bbb;
     --white-50: #aaa;
-    --red : #d2545b;
+    --black-40: #444;
+    --black-30: #2f2f2f;
+    --black-20: #222;
+    --red : #fc2547;
+    --orange : #ff5a00;
     --gradient-image: linear-gradient(to right,#fc2547 50%, #ff5a00 100%);
-    --main-font: "poppins", sans-serif; 
-    --grand-font: "grand-hotel", sans-serif; 
+    --main-font: "Hoppins", sans-serif; 
+    --grand-font: "Grand-Hotel", sans-serif; 
+    --roboto-font: "Roboto", sans-serif; 
 }
 body{
     margin: 0;
@@ -133,11 +142,11 @@ header .home .content {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 30%;
     margin: auto;
     font-size: .8rem;
     text-align: center;
-    margin-top: 10rem;
+    margin-block: 10rem 2rem;
 }
 header .home .content span, header .home .content p {
     color: var(--white-50);
@@ -145,11 +154,56 @@ header .home .content span, header .home .content p {
 header .home .content h1 {
     font-family: var(--grand-font);
     font-size: 3rem;
-    width: 50%;
+    width: 70%;
     font-weight: 100;
 }
 header .home .content p{
     font-size: .6rem;
+    margin: 0;
+}
+header .home search{
+    display: flex;
+    justify-content: center;
+    
+}
+header .home search form{
+    display: flex;
+    background-color: var(--black-30);
+    width: 60%;
+    padding: .5rem;
+    border-radius: 3rem;
+}
+header .home search form label{
+    display: flex;
+    padding: 1rem;
+}
+header .home search form label svg{
+    width: 1.2rem;
+    fill: var(--white-50);
+}
+header .home search form input {
+    background: transparent;
+    border: none;
+    color: var(--white-70);
+    font-size: 1.1rem;
+    flex-grow: 1;
+}
+header .home search form input:focus {
+    outline: none;
+}
+header .home search form input::placeholder{
+    color: var(--white-50)
+}
+header .home search form button{
+    background-image: linear-gradient(to right, #f57e3f 10%, #f5415e);
+    color: var(--white-100);
+    font-weight: 900;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    font-family: var(--roboto-font);
+    cursor: pointer;
 }
 .images{
     position: absolute;
