@@ -8,25 +8,31 @@
         url(../fonts/Poppins-Black.ttf);
 }
 :root{
-    --white: #fff;
+    --white-100: #fff;
+    --white-90: #eee;
+    --white-80: #ddd;
+    --white-70: #ccc;
+    --white-60: #bbb;
+    --white-50: #aaa;
     --red : #d2545b;
-    --off-white: #ccc;
     --gradient-image: linear-gradient(to right,#fc2547 50%, #ff5a00 100%);
-    --main-font: "poppins", sans-serif;
-    
+    --main-font: "poppins", sans-serif; 
 }
 body{
     margin: 0;
     font-family: var(--main-font);
+    color: var(--white-100);
 }
 main{
     position: relative;
 }
 a{
     text-decoration: none;
-    color: var(--white);
+    color: var(--white-100);
 }
-
+svg{
+    width: .8rem;
+}
 /* Nav styles */
 nav{
     background-image: url(../images/bg-1.jpg);
@@ -65,7 +71,7 @@ nav ul a{
 .account-links .cart .badge{
     position: absolute;
     background: var(--red);
-    color: var(--white);
+    color: var(--white-100);
     border-radius: 50%;
     width: 1.2rem;
     height: 1.2rem;
@@ -81,21 +87,25 @@ nav ul a{
     display: none;
 }
 .account-links svg{
-    fill: var(--white);
+    fill: var(--white-100);
     width: 1.2rem;
 }
-
 /* Start Header */
 header{
     background-image: url('../images/bg-1.jpg');
     height: 100vh;
     display: flex;
+    /* position: relative; */
 }
 header aside {
     display: flex;
     flex-direction: column;
     width: 10%;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
 }
 header aside ul {
     list-style: none;
@@ -106,7 +116,23 @@ header aside ul {
     justify-content: space-evenly;
     padding: 0;
 }
-svg{
-    width: .85rem;
-    fill: var(--white);
+header aside ul svg{
+    fill: var(--white-100);
+}
+header .home{
+    flex-grow: 1;
+}
+header .home .content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    font-size: .8rem;
+    text-align: center;
+}
+header .home .content span, header .home .content p {
+    color: var(--white-50);
 }
