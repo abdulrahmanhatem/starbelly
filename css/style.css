@@ -47,17 +47,22 @@ a{
 svg{
     width: .8rem;
 }
+.text-grand{
+    font-family: var(--grand-font);
+}
 /* Nav styles */
 nav{
     background-image: url(../images/bg-1.jpg);
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
+    overflow: hidden;
     display: flex;
     justify-content: space-around;
     padding: 2rem;
     z-index: 1;
+    box-sizing: border-box;
 }
 nav ul{
     list-style: none;
@@ -110,7 +115,7 @@ header{
     background-image: url('../images/bg-1.jpg');
     height: 100vh;
     display: flex;
-    /* position: relative; */
+    position: relative;
 }
 header aside {
     display: flex;
@@ -153,7 +158,6 @@ header .home .content span, header .home .content p {
     color: var(--white-50);
 }
 header .home .content h1 {
-    font-family: var(--grand-font);
     font-size: 3rem;
     width: 70%;
     font-weight: 100;
@@ -213,8 +217,8 @@ header .media {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     overflow: hidden;
 }
 header .media img:nth-child(1){
@@ -225,7 +229,7 @@ header .media img:nth-child(1){
 header .media img:nth-child(2){
     top: 11vw;
     right: -11vw;
-    max-width: 400px;
+    max-width: 380px;
 }
 header .media img:nth-child(3){
     bottom: 1vw;
@@ -236,4 +240,10 @@ header .media img:nth-child(4){
     top: 11vw;
     right: 25vw;
     max-width: 60px;
+}
+
+.food-option{
+    background-image: url('../images/bg-2.jpg');
+    height: 100vh;
+    display: flex;
 }
