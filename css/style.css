@@ -1,19 +1,21 @@
 /* Global styles */
 @font-face {
     font-family: "Hoppins";
-    src: url(../fonts/Poppins-Medium.ttf), 
-        url(../fonts/Poppins-Light.ttf),
-        url(../fonts/Poppins-Thin.ttf),
-        url(../fonts/Poppins-Bold.ttf),
-        url(../fonts/Poppins-Black.ttf);
+    src: src("../fonts/Poppins-Medium.ttf"), 
+    src("../fonts/Poppins-Light.ttf"),
+        src("../fonts/Poppins-Thin.ttf"),
+        src("../fonts/Poppins-Bold.ttf"),
+        src("../fonts/Poppins-Black.ttf");
 }
 @font-face {
     font-family: "Grand-Hotel";
-    src: url(../fonts/GrandHotel-Regular.ttf);
+    src: url("../fonts/GrandHotel-Regular.ttf");
 }
 @font-face {
     font-family: "Roboto";
-    src: url("../fonts/Roboto-Black.ttf");
+    src: src("../fonts/Roboto-thin.ttf"),
+    src("../fonts/Roboto-Light.ttf"),
+    src("../fonts/Roboto-Black.ttf");
 }
 :root{
     --white-100: #fff;
@@ -25,6 +27,7 @@
     --black-40: #444;
     --black-30: #2f2f2f;
     --black-20: #222;
+    --black-10: #0e0e0e;
     --red : #fc2547;
     --orange : #ff5a00;
     --gradient-image: linear-gradient(to right,#fc2547 50%, #ff5a00 100%);
@@ -50,9 +53,19 @@ svg{
 .text-grand{
     font-family: var(--grand-font);
 }
+.btn-magic{
+    background-image: linear-gradient(to right, #f57e3f 10%, #f5415e);
+    color: var(--white-100);
+    font-weight: 900;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    font-family: var(--roboto-font);
+    cursor: pointer;
+}
 /* Nav styles */
 nav{
-    background-image: url(../images/bg-1.jpg);
     position: fixed;
     top: 0;
     left: 0;
@@ -63,6 +76,7 @@ nav{
     padding: 2rem;
     z-index: 1;
     box-sizing: border-box;
+    background: rgb(28 28 28 / 87%);
 }
 nav ul{
     list-style: none;
@@ -199,17 +213,6 @@ header .home search form input:focus {
 header .home search form input::placeholder{
     color: var(--white-50)
 }
-header .home search form button{
-    background-image: linear-gradient(to right, #f57e3f 10%, #f5415e);
-    color: var(--white-100);
-    font-weight: 900;
-    border: none;
-    border-radius: 2rem;
-    padding: 1rem 3rem;
-    font-size: 1rem;
-    font-family: var(--roboto-font);
-    cursor: pointer;
-}
 header img{
     position: absolute;
 }
@@ -241,9 +244,118 @@ header .media img:nth-child(4){
     right: 25vw;
     max-width: 60px;
 }
-
 .food-option{
     background-image: url('../images/bg-2.jpg');
-    height: 100vh;
     display: flex;
+    flex-direction: column;
+}
+.food-option .head, .food-option .gallery {
+    display: flex;
+    padding: 7vw 8vw 2vw 8vw;
+}
+.food-option .head > *{
+    flex: 0 1 50%;
+}
+.food-option .head .text p{
+    font-family: var(--roboto-font);
+    font-weight: 300;
+    font-size: 1.3rem;
+    letter-spacing: 0.03rem;
+    background-image: var(--gradient-image);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+.food-option .head .text h2{
+    font-size: 4.5rem;
+    padding-inline-end: 8rem;
+    font-weight: 100;
+    line-height: 100%;
+    margin-block: 2rem;
+}
+.food-option .head .stats{
+    display: flex;
+    align-items: center;
+}
+.food-option .head .stats > *{
+    flex: 0 1 33%;
+    text-align: center;
+}
+
+.food-option .head svg{
+    width: 1.8rem;
+    /* background: linear-gradient(to right,#fc2547 50%, #ff5a00 100%); */
+    /* -webkit-background-clip: text; */
+    /* fill: transparent; */
+}
+.food-option .head .stats span{
+    display: block;
+    margin-block: 0.8rem;
+    color: var(--white-50);
+}
+.food-option .head .stats span.digit{
+    font-weight: 900;
+    font-family: var(--roboto-font);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+.food-option .head .stats span.title{
+    letter-spacing: 0.03rem;
+}
+
+.food-option .gallery{
+    flex-flow: row wrap;
+}
+.food-option article{
+    flex: 0 1 30%;
+    background-color: var(--black-10);
+    margin: 1.25%;
+    position: relative;
+    overflow: hidden;
+}
+article .preperation-time{
+    position: absolute;
+    background-image: var(--gradient-image);
+    right: -1.8rem;
+    top: -1.8rem;
+    padding: 2.1rem 2rem 0.9rem 1.5rem;
+    border-radius: 50%;
+    text-align: center;
+    font-family: var(--roboto-font);
+    font-size: .8rem;
+}
+article .preperation-time .digit{
+    font-size: 1.1rem;
+    font-weight: 900;
+    line-height: .95;
+}
+article .details{
+    padding: 1.2rem;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+}
+article .details .title{
+    margin-block: 0;
+}
+article .details .rating svg{
+    width: 1.1rem;
+    fill: #f7db8b;
+}
+article .description {
+    margin-block: 0.8rem .5rem;
+    height: 1rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.browse-more {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.browse-more a {
+    width: 35%;
+    margin: 3rem auto 6rem;
 }
