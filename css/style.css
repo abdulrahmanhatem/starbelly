@@ -362,7 +362,7 @@ article .description {
 .download-app{
     display: flex;
     flex-direction: column;
-    background-image: url('../images/bg-1.jpg');
+    background-image: url('../images/bg-2.jpg');
     padding-block: 6rem;
 }
 .download-app *{
@@ -398,4 +398,62 @@ article .description {
     font-weight: 300;
     margin-block-start: 3rem;
     color: var(--white-50);
+}
+.about-us{
+    background-image: url('../images/bg-1.jpg');
+    padding: 6rem 8rem;
+}
+.about-us .row > div{
+    flex: 0 1 50%;
+}
+.about-us .row{
+    margin-block-end: 8rem;
+}
+.about-us .row > div:first-child p:first-child{
+    font-size: 1.3rem;
+    font-family: var(--roboto-font);
+    font-weight: 300;
+    background-image: var(--gradient-image);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.about-us .row > div:first-child p:last-child{
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+    margin-block: 2rem;
+    padding-inline-end: 6rem;
+}
+.about-us .row > div:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.about-us .row > div:last-child p{
+    font-family: var(--roboto-font);
+    color: var(--white-50);
+    line-height: 1.6;
+}
+.about-us .icons{
+    display: flex;
+    padding-inline: 2rem;
+}
+.about-us .icons > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 1 33%;
+    color: var(--white-60);
+}
+.about-us .icons svg{
+    fill: var(--white-90);
+    width: 5.5rem;
+    height: 5.5rem;
+}
+.about-us .icons .title{
+    padding-inline: 5rem;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-block: 2rem;
 }
