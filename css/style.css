@@ -30,7 +30,7 @@
     --black-10: #0e0e0e;
     --red : #fc2547;
     --orange : #ff5a00;
-    --gradient-image: linear-gradient(to right,#fc2547 50%, #ff5a00 100%);
+    --gradient-image: linear-gradient(to right,#fc2547 40%, #ff5a00 100%);
     --main-font: "Hoppins", sans-serif; 
     --grand-font: "Grand-Hotel", sans-serif; 
     --roboto-font: "Roboto", sans-serif; 
@@ -358,4 +358,44 @@ article .description {
 .browse-more a {
     width: 35%;
     margin: 3rem auto 6rem;
+}
+.download-app{
+    display: flex;
+    flex-direction: column;
+    background-image: url('../images/bg-1.jpg');
+    padding-block: 6rem;
+}
+.download-app *{
+    text-align: center;
+}
+.download-app > p:first-child{
+    background-image: var(--gradient-image);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 1.3rem;
+    font-family: var(--roboto-font);
+    font-weight: 300;
+}
+.download-app > p:nth-of-type(2){
+    font-size: 4rem;
+    width: 33rem;
+    margin: auto;
+    line-height: 4rem;
+}
+.download-app .apps{
+    display: flex;
+    margin: auto;
+    gap: 12vw;
+    margin-block-start: 12vw;
+}
+.download-app .apps img{
+    width: 12rem;
+}
+.download-app .apps p{
+    font-size: 1.3rem;
+    font-family: var(--roboto-font);
+    font-weight: 300;
+    margin-block-start: 3rem;
+    color: var(--white-50);
 }
