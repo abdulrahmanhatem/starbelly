@@ -158,7 +158,7 @@ nav ul a{
     transition: all ease-in-out .5s;
     position: relative;
 }
-.account-links .account ul a:before{
+.account-links .account ul a::before{
    content: "";
    background-image: var(--gradient-image);
    position: absolute;
@@ -167,6 +167,11 @@ nav ul a{
    top: 0;
    left: 0;
    z-index: -1;
+   box-sizing: border-box;
+   border-block-start: thin solid var(--black-10);
+}
+.account-links .account ul li:first-of-type a::before{
+    border-block-start: none;
 }
 .account-links .account ul a:hover {
     background-color: transparent;
