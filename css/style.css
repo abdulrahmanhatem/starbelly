@@ -127,7 +127,7 @@ nav ul a{
 }
 .account-links .account:hover ul {
     opacity: 1;
-    
+    visibility: visible;
 }
 .account-links .account ul {
     display: flex;
@@ -139,6 +139,7 @@ nav ul a{
     width: 16vw;
     opacity: 0;
     transition: all ease-in-out .5s;
+    visibility: hidden;
 }
 .account-links .account ul li{
     width: 100%;
