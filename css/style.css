@@ -125,7 +125,7 @@ nav ul a{
 .account-links .account > svg{
     cursor: pointer;;
 }
-.account-links .account > svg:hover .account-links .account ul {
+.account-links .account:hover ul {
     opacity: 1;
     
 }
