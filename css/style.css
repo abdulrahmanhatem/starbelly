@@ -242,6 +242,13 @@ nav .page-links a{
     font-weight: 400;
     font-size: .95rem;
     width: max-content;
+    background-image: var(--gradient-image);
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: all ease-in-out .3s;
+}
+.account-links .cart .details .title a:hover{
+    color: transparent;
 }
 .account-links .cart .details .price{
     margin-block: 0.5rem;
@@ -260,6 +267,9 @@ nav .page-links a{
     display: flex;
     justify-content: space-between;
 }
+.account-links .cart ul li .quantity span{
+    cursor: pointer;
+}
 .account-links .cart ul li .quantity input{
     display: inline;
     max-width: 1vw;
@@ -274,6 +284,7 @@ nav .page-links a{
 .account-links .cart ul li .quantity svg{
     width: 1rem;
     fill: var(--white-100);
+    cursor: pointer;
 }
 .account-links .cart .total{
     text-align: center;
