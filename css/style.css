@@ -30,7 +30,7 @@
     --black-10: #0e0e0e;
     --red : #fc2547;
     --orange : #ff5a00;
-    --gradient-image: linear-gradient(to right,#f54d66 40%, #f28144 100%);
+    --gradient-image: linear-gradient(to right,#f32846 40%, #f8600e 100%);
     --main-font: "Hoppins", sans-serif; 
     --grand-font: "Grand-Hotel", sans-serif; 
     --roboto-font: "Roboto", sans-serif; 
@@ -75,7 +75,7 @@ nav{
     display: flex;
     justify-content: space-around;
     padding: 2rem;
-    z-index: 1;
+    z-index: 3;
     box-sizing: border-box;
     background: rgb(28 28 28 / 87%);
     overflow: visible;
@@ -579,12 +579,48 @@ article .description {
 }
 .slider .content {
     padding-block-start: 10vw;
+    font-family: var(--roboto-font);
+    font-weight: 400;
 }
 .slider .content li{
     text-align: center;
+    display: none;
 }
-.slider .content li img{
+.slider .content li .name{
+    background-clip: text;
+    font-size: 1.5rem;
+    -webkit-background-clip: text;
+    background-image: var(--gradient-image);
+    color: transparent;
+}
+.slider .content li .city{
+    font-size: .85rem;
+    font-weight: 300;
+    letter-spacing: .03rem;
+}
+.slider .content li .feedback{
+    color: var(--white-50);
+    letter-spacing: .01rem;
+}
+.slider .content li:not(img){
+    display: none;
+    visibility: hidden;
+}
+.slider .content li img {
     border-radius: 50%;
+    width: 5vw;
+}
+.slider .content li.active , .slider .content li.show{
+    display: block;
+}
+.slider .content li.active * {
+    visibility: visible;
+}
+.slider .content li.show img {
+    visibility: visible;
+}
+.slider .content li.active img {
+    width: 8vw;
 }
 .slider .navigation{
     padding-block: 1.8vw 7vw;
@@ -597,9 +633,8 @@ article .description {
     margin-inline-end: 0.5rem;
 }
 .slider .navigation li.active{
-    border: thin solid var(--white-100);
+    background-color: var(--white-100);
 }
-
 .download-app{
     display: flex;
     flex-direction: column;
