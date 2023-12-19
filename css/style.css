@@ -614,7 +614,10 @@ article .description {
     width: 5vw;
 }
 .slider .content li.active , .slider .content li.show{
-    /* display: block; */
+    display: block;
+}
+.slider .content li.active{
+    display: block;
 }
 .slider .content li.active * {
     visibility: visible;
