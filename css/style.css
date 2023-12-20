@@ -65,6 +65,12 @@ svg{
     font-family: var(--roboto-font);
     cursor: pointer;
 }
+
+.container{
+    width: 1150px;
+    margin: auto;
+}
+
 /* Nav styles */
 nav{
     position: fixed;
@@ -72,13 +78,14 @@ nav{
     left: 0;
     width: 100vw;
     overflow: hidden;
-    display: flex;
-    justify-content: space-around;
-    padding: 2rem;
     z-index: 3;
     box-sizing: border-box;
     background: rgb(28 28 28 / 87%);
-    overflow: visible;
+}
+nav .container{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
 }
 nav ul{
     list-style: none;
@@ -86,7 +93,7 @@ nav ul{
     padding: 0;
     display: flex;
     flex: 0 1 35%;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 nav .page-links a{
@@ -412,22 +419,22 @@ header .media {
 header .media img:nth-child(1){
     top: 14vw;
     left: 15vw;
-    max-width: 184px;
+    max-width: 17rem;
 }
 header .media img:nth-child(2){
     top: 11vw;
     right: -11vw;
-    max-width: 380px;
+    max-width: 32rem;
 }
 header .media img:nth-child(3){
     bottom: 1vw;
     left: -0.7vw;
-    max-width: 135px;
+    max-width: 12rem;
 }
 header .media img:nth-child(4){
     top: 11vw;
     right: 25vw;
-    max-width: 60px;
+    max-width: 5rem;
 }
 .food-option{
     background-image: url('../images/bg-2.jpg');
