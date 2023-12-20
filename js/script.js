@@ -15,8 +15,15 @@ slider.appendChild(navigation);
 for (let i = 0; i < sliderItems.length; i++) {
 
     let item = sliderItems[i];
+    let previous = sliderItems[i-1];
+    let next = sliderItems[i+1];
     let dots = navigation.querySelectorAll("li");
     let dot =  dots[i];
+    let show;
+
+    
+
+    
 
     // Activate Navigation item order
     if (item.classList.contains('active')) {
@@ -35,24 +42,24 @@ for (let i = 0; i < sliderItems.length; i++) {
         })
         item.classList.add('active');
         dot.classList.add('active');
-
+        
         switch (i) {
-            default:
-                sliderItems[i+1].classList.add('show')
-                sliderItems[i-1].classList.add('show')
-                break;
             case sliderItems.length -1:
-                sliderItems[0].classList.add('show')
-                sliderItems[i-1].classList.add('show')
+                previous = sliderItems[i-1];
+                next = sliderItems[0];
                 break;
-
+    
             case 0:
-                sliderItems[i+1].classList.add('show')
-                sliderItems[sliderItems.length -1].classList.add('show')
+                previous = sliderItems[sliderItems.length -1];
+                next = sliderItems[i+1];
                 break;
-            
         }
+        previous.classList.add('show')
+        next.classList.add('show')
+        
         
     })
+
+    
 
 }

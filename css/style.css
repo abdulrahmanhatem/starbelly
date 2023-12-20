@@ -599,11 +599,16 @@ article .description {
     font-weight: 300;
     letter-spacing: .03rem;
 }
-.slider .content li .feedback{
+.slider .feedback li{
     color: var(--white-70);
     letter-spacing: .01rem;
     max-width: 46vw;
     line-height: 1.5;
+    display: none;
+    text-align: center;
+}
+.slider .feedback li.active{
+    display: block;
 }
 .slider .content li:not(img){
     display: none;
