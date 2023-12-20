@@ -15,7 +15,8 @@ slider.appendChild(navigation);
 for (let i = 0; i < sliderItems.length; i++) {
 
     let item = sliderItems[i];
-    let dot =  navigation.querySelectorAll("li")[i];
+    let dots = navigation.querySelectorAll("li");
+    let dot =  dots[i];
 
     // Activate Navigation item order
     if (item.classList.contains('active')) {
@@ -24,11 +25,34 @@ for (let i = 0; i < sliderItems.length; i++) {
 
     // Activate item by dot click
     dot.addEventListener('click', ()=>{
+        
         sliderItems.forEach((it)=>{
             it.classList.remove('active');
+            it.classList.remove('show');
+        })
+        dots.forEach((dt) => {
+            dt.classList.remove('active');
         })
         item.classList.add('active');
+        dot.classList.add('active');
 
+        switch (i) {
+            default:
+                sliderItems[i+1].classList.add('show')
+                sliderItems[i-1].classList.add('show')
+                break;
+            case sliderItems.length -1:
+                sliderItems[0].classList.add('show')
+                sliderItems[i-1].classList.add('show')
+                break;
+
+            case 0:
+                sliderItems[i+1].classList.add('show')
+                sliderItems[sliderItems.length -1].classList.add('show')
+                break;
+            
+        }
+        
     })
 
 }
