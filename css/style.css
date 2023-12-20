@@ -358,18 +358,18 @@ header .home .content {
     margin: auto;
     font-size: .8rem;
     text-align: center;
-    margin-block: 10rem 2rem;
+    margin-block: 10vw 2rem;
 }
 header .home .content span, header .home .content p {
     color: var(--white-50);
 }
 header .home .content h1 {
-    font-size: 3rem;
+    font-size: 3.5vw;
     width: 70%;
     font-weight: 100;
 }
 header .home .content p{
-    font-size: .6rem;
+    font-size: .95vw;
     margin: 0;
 }
 header .home search{
@@ -380,7 +380,7 @@ header .home search{
 header .home search form{
     display: flex;
     background-color: var(--black-30);
-    width: 60%;
+    width: 75%;
     padding: .5rem;
     border-radius: 3rem;
 }
@@ -443,7 +443,7 @@ header .media img:nth-child(4){
 }
 .food-option .head, .food-option .gallery {
     display: flex;
-    padding: 7vw 8vw 2vw 8vw;
+    padding: 7vw 0 2vw 0;
 }
 .food-option .head > *{
     flex: 0 1 50%;
@@ -520,6 +520,9 @@ article .preperation-time .digit{
     font-size: 1.1rem;
     font-weight: 900;
     line-height: .95;
+}
+article img{
+    width: 100%;
 }
 article .details{
     padding: 1.2rem;
@@ -681,7 +684,7 @@ article .description {
     display: flex;
     margin: auto;
     gap: 12vw;
-    margin-block-start: 12vw;
+    margin-block-start: 10vw;
 }
 .download-app .apps img{
     width: 12rem;
@@ -755,16 +758,22 @@ article .description {
 footer {
     background-image: url(../images/bg-2.jpg);
     padding: 6.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
     position: fixed;
     bottom: 0;
     width: 100%;
     box-sizing: border-box;
     z-index: -1;
 }
-footer > *{
+footer .container{
+    display: flex;
+    gap: 2vw;
+    flex-direction: column; 
+}
+footer .social-media{
+    display: flex;
+    gap: 2rem; 
+}
+footer .social-media, footer .copyright{
     display: flex;
     justify-content: center;
     gap: 3vw;
