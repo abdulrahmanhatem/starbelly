@@ -419,22 +419,22 @@ header .media {
 header .media img:nth-child(1){
     top: 14vw;
     left: 15vw;
-    max-width: 17rem;
+    max-width: 11rem;
 }
 header .media img:nth-child(2){
     top: 11vw;
     right: -11vw;
-    max-width: 32rem;
+    max-width: 22rem;
 }
 header .media img:nth-child(3){
     bottom: 1vw;
     left: -0.7vw;
-    max-width: 12rem;
+    max-width: 8rem;
 }
 header .media img:nth-child(4){
     top: 11vw;
     right: 25vw;
-    max-width: 5rem;
+    max-width: 4rem;
 }
 .food-option{
     background-image: url('../images/bg-2.jpg');
@@ -699,7 +699,7 @@ article .description {
 .about-us{
     background-image: url('../images/bg-1.jpg');
     padding: 6rem 8rem;
-    margin-block-end: 17.5rem;
+    margin-block-end: 16rem;
 }
 .about-us .row > div{
     flex: 0 1 50%;
