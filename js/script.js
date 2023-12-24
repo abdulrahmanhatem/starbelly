@@ -11,6 +11,7 @@ for (let it = 0; it < items.length; it++) {
     let dot = document.createElement('li');
     navigation.appendChild(dot);
 }
+navigation.querySelector('li').classList.add("active")
 // Append navigation node to the slider
 slider.appendChild(navigation);
 
@@ -62,6 +63,7 @@ for (let i = 0; i < items.length; i++) {
 
     let dots = navigation.querySelectorAll("li");
     let dot =  dots[i];
+    
 
     dot.addEventListener('click', ()=>{
         showItems(i)

@@ -592,9 +592,12 @@ article .description {
     font-family: var(--roboto-font);
     font-weight: 400;
 }
-.slider .content li{
+.slider .content li {
     text-align: center;
     display: none;
+    width: 150px;
+    overflow: visible;
+    
 }
 .slider .content li .name{
     background-clip: text;
@@ -603,6 +606,7 @@ article .description {
     background-image: var(--gradient-image);
     color: transparent;
     margin-block-end: 0.5vw;
+    width: max-content;
 }
 .slider .content li .city{
     font-size: .85rem;
@@ -631,8 +635,10 @@ article .description {
 .slider .content li.active , .slider .content li.show{
     display: block;
 }
-.slider .content li.active{
-    display: block;
+.slider .content li.active {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 }
 .slider .content li.active * {
     visibility: visible;
