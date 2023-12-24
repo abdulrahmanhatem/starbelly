@@ -7,20 +7,31 @@ let navigation = document.createElement('ul');
 navigation.classList.add('navigation');
 
 for (let it = 0; it < items.length; it++) {
+    // Create a navigation dot element for every slider content item
     let dot = document.createElement('li');
     navigation.appendChild(dot);
 }
+// Append navigation node to the slider
 slider.appendChild(navigation);
 
 
 function refreshSlider(prev,current,next){
     let show = [];
+
+    items.forEach(element => {
+        element.classList.remove("show")
+        element.classList.remove("active")
+        element.remove()
+    });
+
+    prev.classList.add('show');
+    current.classList.add('active');
+    next.classList.add('show');
+
     show.push(prev);
     show.push(current);
     show.push(next);
-    items.forEach(element => {
-        element.remove();
-    });
+    
 
     show.forEach(el => {
         content.appendChild(el)
@@ -44,47 +55,22 @@ function showItems(current){
             break;
         }
 
-    refreshSlider(previous,item, next )
-}
-
-function activateNavDot(){
-
+    refreshSlider(previous,item, next)
 }
 
 for (let i = 0; i < items.length; i++) {
 
-   
-    // let dots = navigation.querySelectorAll("li");
-    // let dot =  dots[i];
+    let dots = navigation.querySelectorAll("li");
+    let dot =  dots[i];
 
-    showItems(i)
-
-
-    // // Activate Navigation item order
-    // if (item.classList.contains('active')) {
-    //     dot.classList.add('active');
-    // }
-
-    // Activate item by dot click
     dot.addEventListener('click', ()=>{
-        
-        items.forEach((it)=>{
-            it.classList.remove('active');
-            it.classList.remove('show');
-        })
+        showItems(i)
+
         dots.forEach((dt) => {
             dt.classList.remove('active');
         })
 
-        refreshSlider()
-
-        item.classList.add('active');
-        // dot.classList.add('active');
-        // previous.classList.add('show')
-        // next.classList.add('show')
-
+        dot.classList.add('active');
     })
-
-    
 
 }
