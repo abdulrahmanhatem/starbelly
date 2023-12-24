@@ -20,6 +20,7 @@ function refreshSlider(prev,current,next){
     let show = [];
 
     items.forEach(element => {
+        // element.style.transform = "translate(-150px)"
         element.classList.remove("show")
         element.classList.remove("active")
         element.remove()
@@ -59,20 +60,26 @@ function showItems(current){
     refreshSlider(previous,item, next)
 }
 
+function changeItem(i, dots, dot) {
+    showItems(i)
+    dots.forEach((dt) => {
+        dt.classList.remove('active');
+    })
+    dot.classList.add('active');  
+}
+
 for (let i = 0; i < items.length; i++) {
 
     let dots = navigation.querySelectorAll("li");
     let dot =  dots[i];
-    
+    let avatar = items[i].querySelector("img");
 
     dot.addEventListener('click', ()=>{
-        showItems(i)
+      changeItem(i, dots,dot)
+    })
 
-        dots.forEach((dt) => {
-            dt.classList.remove('active');
-        })
-
-        dot.classList.add('active');
+    avatar.addEventListener('click', ()=>{
+        changeItem(i, dots,dot)
     })
 
 }

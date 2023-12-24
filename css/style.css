@@ -631,6 +631,7 @@ article .description {
 .slider .content li img {
     border-radius: 50%;
     width: 5vw;
+    cursor: pointer;
 }
 .slider .content li.active , .slider .content li.show{
     display: block;
@@ -658,6 +659,7 @@ article .description {
     border: 0.13rem solid var(--white-100);
     border-radius: 50%;
     margin-inline-end: 0.5rem;
+    cursor: pointer;
 }
 .slider .navigation li.active{
     background-color: var(--white-100);
