@@ -23,21 +23,33 @@ function refreshSlider(prev,current,next){
         // element.style.transform = "translate(-150px)"
         element.classList.remove("show")
         element.classList.remove("active")
-        element.remove()
+        // element.remove()
     });
 
     prev.classList.add('show');
     current.classList.add('active');
     next.classList.add('show');
 
-    show.push(prev);
-    show.push(current);
-    show.push(next);
+    let x = 0;
     
 
-    show.forEach(el => {
-        content.appendChild(el)
-    })
+    if (content.style.transform) {
+        x = content.style.transform.replace(/^\.|[^-?\d\.]|\.(?=.*\.)|^0+(?=\d)/g, '')
+    }
+    
+
+    content.style.transform = `translateX(${x - 150}px)`
+
+    console.log(content.style.transform)
+
+    // show.push(prev);
+    // show.push(current);
+    // show.push(next);
+    
+
+    // show.forEach(el => {
+    //     content.appendChild(el)
+    // })
 }
 
 function showItems(current){
@@ -60,7 +72,7 @@ function showItems(current){
     refreshSlider(previous,item, next)
 }
 
-function changeItem(i, dots, dot) {
+function moveSlider(i, dots, dot) {
     showItems(i)
     dots.forEach((dt) => {
         dt.classList.remove('active');
@@ -75,11 +87,11 @@ for (let i = 0; i < items.length; i++) {
     let avatar = items[i].querySelector("img");
 
     dot.addEventListener('click', ()=>{
-      changeItem(i, dots,dot)
+        moveSlider(i, dots,dot)
     })
 
     avatar.addEventListener('click', ()=>{
-        changeItem(i, dots,dot)
+        moveSlider(i, dots,dot)
     })
 
 }
