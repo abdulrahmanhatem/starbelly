@@ -16,64 +16,61 @@ navigation.querySelector('li').classList.add("active")
 slider.appendChild(navigation);
 
 
-function refreshSlider(prev,current,next){
-    let show = [];
+function refreshSlider(prev,current,next, direction,step){
+    let pre = items[prev];
+    let crn = items[current];
+    let nxt = items[next];
+
 
     items.forEach(element => {
-        // element.style.transform = "translate(-150px)"
+        // Remove Show and Active Classes from All slider Items
         element.classList.remove("show")
         element.classList.remove("active")
-        // element.remove()
     });
 
-    prev.classList.add('show');
-    current.classList.add('active');
-    next.classList.add('show');
+    pre.classList.add('show');
+    nxt.classList.add('show');
+    crn.classList.add('active');
 
-    let x = 0;
+    let x = 150;
     
-
     if (content.style.transform) {
         x = content.style.transform.replace(/^\.|[^-?\d\.]|\.(?=.*\.)|^0+(?=\d)/g, '')
     }
-    
 
-    content.style.transform = `translateX(${x - 150}px)`
+    content.style.transform = `translateX(${step * 150}px)`
 
-    console.log(content.style.transform)
-
-    // show.push(prev);
-    // show.push(current);
-    // show.push(next);
-    
-
-    // show.forEach(el => {
-    //     content.appendChild(el)
-    // })
+    // console.log(content.style.transform)
 }
 
-function showItems(current){
-    let item = items[current];
-    let previous = items[current-1];
-    let next = items[current+1];
+function showItems(i, oldActive= 0){
+    
+    let current = i;
+    let prev = current- 1;
+    let next = current+ 1;
+    let step = oldActive - i;
+    console.log("i => "+ i)
+    console.log("oldActive => "+ oldActive)
+    console.log("step => "+ step)
+    let direction = 0; // 0 => no move , 1 => to Left, 2 => to right
 
-    switch (current) {
+
+    switch (i) {
         case items.length -1:
-            previous = items[current-1];
-            next = items[0];
+            next = 0;
             break;
 
         case 0:
-            previous = items[items.length -1];
-            next = items[current+1];
+            prev = items.length -1;
             break;
         }
 
-    refreshSlider(previous,item, next)
+        
+
+    refreshSlider(prev,current, next, direction, step)
 }
 
-function moveSlider(i, dots, dot) {
-    showItems(i)
+function activeDot(dots, dot) {   
     dots.forEach((dt) => {
         dt.classList.remove('active');
     })
@@ -81,17 +78,23 @@ function moveSlider(i, dots, dot) {
 }
 
 for (let i = 0; i < items.length; i++) {
+    let item = items[i];
+    // let oldActive = items.indexOf(item);
 
+    console.log(items);
+    // console.log("oldActive => "+ oldActive +" " + i)
     let dots = navigation.querySelectorAll("li");
     let dot =  dots[i];
     let avatar = items[i].querySelector("img");
 
-    dot.addEventListener('click', ()=>{
-        moveSlider(i, dots,dot)
-    })
+    // dot.addEventListener('click', ()=>{
+    //     moveSlider(i, dots,dot)
+    // })
 
     avatar.addEventListener('click', ()=>{
-        moveSlider(i, dots,dot)
+        activeDot(dots,dot);
+        
+        showItems(i, oldActive)
     })
 
 }
