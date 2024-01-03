@@ -16,7 +16,7 @@ navigation.querySelector('li').classList.add("active")
 slider.appendChild(navigation);
 
 
-function refreshSlider(prev,current,next, direction,step){
+function refreshSlider(prev,current,next,step){
     let pre = items[prev];
     let crn = items[current];
     let nxt = items[next];
@@ -32,27 +32,33 @@ function refreshSlider(prev,current,next, direction,step){
     nxt.classList.add('show');
     crn.classList.add('active');
 
-    let x = 150;
-    
+    let x = 0;
+    let move = 150;
     if (content.style.transform) {
         x = content.style.transform.replace(/^\.|[^-?\d\.]|\.(?=.*\.)|^0+(?=\d)/g, '')
+        x = +x;
     }
 
-    content.style.transform = `translateX(${step * 150}px)`
-
-    // console.log(content.style.transform)
+    console.log("x => " + x + typeof x);
+    console.log("step =>" + step + typeof step);
+    console.log("(step * move) + x => " + ((step * move) + x) + typeof ((step * move) + x));
+    if (step) {
+        content.style.transform = `translateX(${(step * move) + x}px)` 
+        console.log(content.style.transform);
+    }
 }
 
-function showItems(i, oldActive= 0){
+function showItems(i){
+
+    let oldActive = getActiveItemIndex();
     
     let current = i;
     let prev = current- 1;
     let next = current+ 1;
     let step = oldActive - i;
-    console.log("i => "+ i)
-    console.log("oldActive => "+ oldActive)
-    console.log("step => "+ step)
-    let direction = 0; // 0 => no move , 1 => to Left, 2 => to right
+    // console.log("i => "+ i)
+    // console.log("oldActive => "+ oldActive)
+    // console.log("step => "+ step)
 
 
     switch (i) {
@@ -67,7 +73,7 @@ function showItems(i, oldActive= 0){
 
         
 
-    refreshSlider(prev,current, next, direction, step)
+    refreshSlider(prev,current, next, step)
 }
 
 function activeDot(dots, dot) {   
@@ -77,24 +83,30 @@ function activeDot(dots, dot) {
     dot.classList.add('active');  
 }
 
-for (let i = 0; i < items.length; i++) {
-    let item = items[i];
-    // let oldActive = items.indexOf(item);
+function getActiveItemIndex(){
+    let active = content.querySelector('li.active');
+    return index = Array.from(items).indexOf(active)
+}
 
-    console.log(items);
-    // console.log("oldActive => "+ oldActive +" " + i)
-    let dots = navigation.querySelectorAll("li");
-    let dot =  dots[i];
+
+for (let i = 0; i < items.length; i++) {
     let avatar = items[i].querySelector("img");
+    
+    // let dots = navigation.querySelectorAll("li");
+    // let dot =  dots[i];
+
+    
 
     // dot.addEventListener('click', ()=>{
     //     moveSlider(i, dots,dot)
     // })
 
     avatar.addEventListener('click', ()=>{
-        activeDot(dots,dot);
+        showItems(i)
+        // activeDot(dots,dot);
         
-        showItems(i, oldActive)
+        
+        
     })
 
 }
