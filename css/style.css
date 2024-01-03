@@ -604,6 +604,7 @@ article .description {
     /* display: none; */
     width: 150px;
     overflow: visible;
+    transition: all ease-in-out .5s;
 }
 .testimonial .slider .content li .avatar{
     height: 8vw;
@@ -642,10 +643,10 @@ article .description {
 } */
 /* .testimonial .slider .content li.active * {
     visibility: visible;
+}*/
+.slider .content li.show >:not(.avatar){
+    visibility: hidden;
 }
-.testimonial .slider .content li.show img {
-    visibility: visible;
-} */
 .testimonial .slider .content li.active img {
     width: 8vw;
 }
