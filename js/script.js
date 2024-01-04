@@ -6,17 +6,23 @@ let items = content.querySelectorAll('li');
 let navigation = document.createElement('ul');
 navigation.classList.add('navigation');
 
+
+
 for (let it = 0; it < items.length; it++) {
     // Create a navigation dot element for every slider content item
     let dot = document.createElement('li');
     navigation.appendChild(dot);
 }
 navigation.querySelector('li').classList.add("active")
+
+
 // Append navigation node to the slider
 slider.appendChild(navigation);
 
+let dots = navigation.querySelectorAll("li");
+getActiveItemIndex();
 
-function refreshSlider(prev,current,next,step){
+function refreshSlider(prev,current,next,step, generate){
     let pre = items[prev];
     let crn = items[current];
     let nxt = items[next];
@@ -43,6 +49,10 @@ function refreshSlider(prev,current,next,step){
     console.log("step =>" + step + typeof step);
     console.log("(step * move) + x => " + ((step * move) + x) + typeof ((step * move) + x));
     if (step) {
+        if (step > 0) {
+            generateItem(generate)
+        }
+
         content.style.transform = `translateX(${(step * move) + x}px)` 
         console.log(content.style.transform);
     }
@@ -56,6 +66,7 @@ function showItems(i){
     let prev = current- 1;
     let next = current+ 1;
     let step = oldActive - i;
+    let generate;
     // console.log("i => "+ i)
     // console.log("oldActive => "+ oldActive)
     // console.log("step => "+ step)
@@ -63,11 +74,12 @@ function showItems(i){
 
     switch (i) {
         case items.length -1:
-            next = 0;
+            next = generate = 0;
+            generate = 0;
             break;
 
         case 0:
-            prev = items.length -1;
+            prev = generate = items.length -1;
             break;
         }
 
@@ -76,7 +88,10 @@ function showItems(i){
     refreshSlider(prev,current, next, step)
 }
 
-function activeDot(dots, dot) {   
+function activeDot(i) {  
+    
+    let dot =  dots[i];
+
     dots.forEach((dt) => {
         dt.classList.remove('active');
     })
@@ -85,28 +100,31 @@ function activeDot(dots, dot) {
 
 function getActiveItemIndex(){
     let active = content.querySelector('li.active');
-    return index = Array.from(items).indexOf(active)
+    let i = Array.from(items).indexOf(active)
+
+    activeDot(i)
+    return i;
 }
 
+function generateItem(i, placement = 0 /* At Right */){
+
+
+}
 
 for (let i = 0; i < items.length; i++) {
     let avatar = items[i].querySelector("img");
-    
-    // let dots = navigation.querySelectorAll("li");
-    // let dot =  dots[i];
-
+    let dot = dots[i];
     
 
-    // dot.addEventListener('click', ()=>{
-    //     moveSlider(i, dots,dot)
-    // })
+    
+
+    dot.addEventListener('click', ()=>{
+        showItems(i)
+        
+    })
 
     avatar.addEventListener('click', ()=>{
         showItems(i)
-        // activeDot(dots,dot);
-        
-        
-        
     })
 
 }
