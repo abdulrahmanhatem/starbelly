@@ -609,9 +609,10 @@ article .description {
 .testimonial .slider .content li *{
     transition: all ease-in-out .5s;
 }
-
 .testimonial .slider .content li .avatar{
     height: 8vw;
+    display: flex;
+    align-items: center;
 }
 .testimonial .slider .content li .name{
     background-clip: text;
@@ -635,6 +636,7 @@ article .description {
 .testimonial .slider .content li img {
     border-radius: 50%;
     width: 5vw;
+    height: 5vw;
     cursor: pointer;
 }
 
@@ -652,6 +654,7 @@ article .description {
 }
 .testimonial .slider .content li.active img {
     width: 8vw;
+    height: 8vw;
 }
 .testimonial .slider .navigation{
     padding-block: 1.8vw 7vw;
