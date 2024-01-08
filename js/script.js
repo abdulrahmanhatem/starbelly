@@ -38,6 +38,8 @@ function refreshSlider(prev,current,next,step, generate){
     nxt.classList.add('show');
     crn.classList.add('active');
 
+    getActiveItemIndex()
+
     let x = 0;
     let move = 150;
     if (content.style.transform) {
@@ -66,11 +68,6 @@ function showItems(i){
     let prev = current- 1;
     let next = current+ 1;
     let step = oldActive - i;
-    let generate;
-    // console.log("i => "+ i)
-    // console.log("oldActive => "+ oldActive)
-    // console.log("step => "+ step)
-
 
     switch (i) {
         case items.length -1:
@@ -114,9 +111,6 @@ function generateItem(i, placement = 0 /* At Right */){
 for (let i = 0; i < items.length; i++) {
     let avatar = items[i].querySelector("img");
     let dot = dots[i];
-    
-
-    
 
     dot.addEventListener('click', ()=>{
         showItems(i)
