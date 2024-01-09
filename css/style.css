@@ -598,7 +598,7 @@ article .description {
     font-weight: 400;
     transform: translateX(40px);
     transition: all ease-in-out .5s;
-    border: black solid;
+    /* background: #18181869; */
 }
 .testimonial .slider .content li {
     text-align: center;
