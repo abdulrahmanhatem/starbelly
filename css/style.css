@@ -598,10 +598,10 @@ article .description {
     font-weight: 400;
     transform: translateX(40px);
     transition: all ease-in-out .5s;
+    border: black solid;
 }
 .testimonial .slider .content li {
     text-align: center;
-    /* display: none; */
     width: 150px;
     overflow: visible;
     transition: all ease-in-out .5s;
@@ -628,28 +628,16 @@ article .description {
     font-weight: 300;
     letter-spacing: .03rem;
 }
-
-.testimonial .slider .content li:not(img){
-    /* display: none; */
-    /* visibility: hidden; */
-}
 .testimonial .slider .content li img {
     border-radius: 50%;
     width: 5vw;
     height: 5vw;
     cursor: pointer;
 }
-
-/* .testimonial .slider .content li.active {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-} */
-/* .testimonial .slider .content li.active * {
-    visibility: visible;
-}*/
+.slider .content li.show {
+    width: 8vw;
+}
 .slider .content li.show >:not(.avatar){
-    /* visibility: hidden; */
     opacity: 0;
 }
 .testimonial .slider .content li.active img {
