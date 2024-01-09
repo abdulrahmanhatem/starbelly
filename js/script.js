@@ -47,16 +47,19 @@ function refreshSlider(prev,current,next,step, generate){
         x = +x;
     }
 
-    console.log("x => " + x + typeof x);
-    console.log("step =>" + step + typeof step);
-    console.log("(step * move) + x => " + ((step * move) + x) + typeof ((step * move) + x));
+    // console.log("x => " + x + typeof x);
+    // console.log("step =>" + step + typeof step);
+    // console.log("(step * move) + x => " + ((step * move) + x) + typeof ((step * move) + x));
     if (step) {
+        console.log(step);
         if (step > 0) {
-            generateItem(generate)
+            generateItem("left")
+        }else{
+            generateItem("right")
         }
 
         content.style.transform = `translateX(${(step * move) + x}px)` 
-        console.log(content.style.transform);
+        // console.log(content.style.transform);
     }
 }
 
@@ -103,8 +106,17 @@ function getActiveItemIndex(){
     return i;
 }
 
-function generateItem(i, placement = 0 /* At Right */){
-
+function generateItem(direction){
+    console.log(direction)
+    if (direction === "left") {
+        
+    }else{
+        
+    console.log(items)
+    // content.appendChild(items);
+       
+        
+    }
 
 }
 
