@@ -30,11 +30,27 @@
     --black-10: #0e0e0e;
     --red : #fc2547;
     --orange : #ff5a00;
-    --gradient-image: linear-gradient(to right,#f32846 40%, #f8600e 100%);
+    --gradient-image-to-right: linear-gradient(to right,#f32846 40%, #f8600e 100%);
+    --gradient-image-to-top: linear-gradient(to top,#f32846 40%, #f8600e 100%);
     --main-font: "Hoppins", sans-serif; 
     --grand-font: "Grand-Hotel", sans-serif; 
     --roboto-font: "Roboto", sans-serif; 
 }
+/* Scroll bar Styles  */ 
+::-webkit-scrollbar {
+    width: 10px; 
+}
+::-webkit-scrollbar-track{
+    background-color: var(--black-20);
+}
+::-webkit-scrollbar-thumb{
+    background: var(--gradient-image-to-top);
+    min-height: 25%;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: var(--gradient-image-to-top);
+}
+
 body{
     margin: 0;
     font-family: var(--main-font);
@@ -167,7 +183,7 @@ nav .page-links a{
 }
 .account-links .account ul a::before{
    content: "";
-   background-image: var(--gradient-image);
+   background-image: var(--gradient-image-to-right);
    position: absolute;
    width: 100%;
    height: 100%;
@@ -224,7 +240,7 @@ nav .page-links a{
     border-radius: .1rem;
 }
 .account-links .cart ul::-webkit-scrollbar-thumb {
-    background:var(--gradient-image);
+    background:var(--gradient-image-to-right);
 }
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
@@ -249,7 +265,7 @@ nav .page-links a{
     font-weight: 400;
     font-size: .95rem;
     width: max-content;
-    background-image: var(--gradient-image);
+    background-image: var(--gradient-image-to-right);
     background-clip: text;
     -webkit-background-clip: text;
     transition: all ease-in-out .3s;
@@ -453,7 +469,7 @@ header .media img:nth-child(4){
     font-weight: 300;
     font-size: 1.3rem;
     letter-spacing: 0.03rem;
-    background-image: var(--gradient-image);
+    background-image: var(--gradient-image-to-right);
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
@@ -507,7 +523,7 @@ header .media img:nth-child(4){
 }
 article .preperation-time{
     position: absolute;
-    background-image: var(--gradient-image);
+    background-image: var(--gradient-image-to-right);
     right: -1.8rem;
     top: -1.8rem;
     padding: 2.1rem 2rem 0.9rem 1.5rem;
@@ -617,7 +633,7 @@ article .description {
     background-clip: text;
     font-size: 1.5rem;
     -webkit-background-clip: text;
-    background-image: var(--gradient-image);
+    background-image: var(--gradient-image-to-right);
     color: transparent;
     margin-block-end: 0.5vw;
     width: max-content;
@@ -675,7 +691,7 @@ article .description {
     text-align: center;
 }
 .download-app > p:first-child{
-    background-image: var(--gradient-image);
+    background-image: var(--gradient-image-to-right);
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -720,7 +736,7 @@ article .description {
     font-size: 1.3rem;
     font-family: var(--roboto-font);
     font-weight: 300;
-    background-image: var(--gradient-image);
+    background-image: var(--gradient-image-to-right);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
