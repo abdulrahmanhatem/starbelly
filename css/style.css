@@ -442,6 +442,25 @@ header .media img:nth-child(1){
     top: 14vw;
     left: 15vw;
     max-width: 11rem;
+    animation: move-dish 6s alternate infinite ease-out;
+}
+@keyframes move-dish {
+    0%{
+        rotate: 0rad;
+        translate: 0;
+    }
+    50%{
+        rotate: .2rad;
+        translate: -0.5rem -0.5rem;
+    }
+    100%{
+        rotate: 0rad;
+    }
+}
+header .media img:nth-child(1){
+    top: 14vw;
+    left: 15vw;
+    max-width: 11rem;
 }
 header .media img:nth-child(2){
     top: 11vw;
