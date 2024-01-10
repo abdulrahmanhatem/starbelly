@@ -37,6 +37,7 @@
     --roboto-font: "Roboto", sans-serif; 
 }
 /* Scroll bar Styles  */ 
+/* - Chrome and Safari */ 
 ::-webkit-scrollbar {
     width: 10px; 
 }
@@ -50,7 +51,12 @@
 ::-webkit-scrollbar-thumb:hover{
     background: var(--gradient-image-to-top);
 }
-
+/* - Firefox */ 
+html{
+    scrollbar-color: var(--red) var(--black-20); 
+    scrollbar-gutter: stable;
+    scrollbar-width: 10px;
+}
 body{
     margin: 0;
     font-family: var(--main-font);
