@@ -51,7 +51,7 @@ function refreshSlider(prev,current,next,step, generate){
     // console.log("step =>" + step + typeof step);
     // console.log("(step * move) + x => " + ((step * move) + x) + typeof ((step * move) + x));
     if (step) {
-        console.log(step);
+        // console.log(step);
         if (step > 0) {
             generateItem("left")
         }else{
@@ -134,3 +134,46 @@ for (let i = 0; i < items.length; i++) {
     })
 
 }
+
+/* Home Mouse Move Animations*/ 
+addEventListener('mousemove', e => {
+    var x = e.movementX * .01; // .01 => custom moving ratio
+    var y = e.movementY * .01; // .01 => custom moving ratio
+    var movingItems = document.querySelectorAll(".mouse-move");
+
+    movingItems.forEach(i => {
+        let style = getComputedStyle(i, 'top')
+
+        console.log(i.tagName)
+
+        let top = style.marginTop;
+        let right = style.marginRight;
+        let bottom = style.marginBottom;
+        let left = style.marginLeft;
+        let topProp = `margin-top`;
+        let rightProp = `margin-right`;
+        let bottomProp = `margin-bottom`;
+        let leftProp = `margin-left`;
+
+        if (i.tagName === "IMG") {
+
+            top = style.top;
+            right = style.right;
+            bottom = style.bottom;
+            left = style.left;
+            topProp = `top`;
+            rightProp = `right`;
+            bottomProp = `bottom`;
+            leftProp = `left`;
+        }
+        
+        let newStyle = `
+            ${topProp}:${parseFloat(top) + y}px;
+            ${rightProp}:${parseFloat(right) + x}px;
+            ${bottomProp}:${parseFloat(bottom) - y}px;
+            ${leftProp}:${parseFloat(left) - x}px;
+        `;
+
+        i.setAttribute("style", newStyle) 
+    })
+})

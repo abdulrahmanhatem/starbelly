@@ -438,13 +438,16 @@ header .media {
     width: 100%;
     overflow: hidden;
 }
+.mouse-move{
+    /* transition: top ease-in-out .3s; */
+}
 header .media img:nth-child(1){
     top: 14vw;
     left: 15vw;
     max-width: 11rem;
-    animation: move-dish 6s alternate infinite ease-out;
+    animation: move 6s alternate infinite ease-out;
 }
-@keyframes move-dish {
+@keyframes move {
     0%{
         rotate: 0rad;
         translate: 0;
@@ -476,6 +479,7 @@ header .media img:nth-child(4){
     top: 11vw;
     right: 25vw;
     max-width: 4rem;
+    animation: move 10s alternate infinite ease-out;
 }
 .food-option{
     background-image: url('../images/bg-2.jpg');
