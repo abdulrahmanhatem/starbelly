@@ -439,7 +439,7 @@ header .media {
     overflow: hidden;
 }
 .mouse-move{
-    /* transition: top ease-in-out .3s; */
+    /* transition: all ease-in-out .3s; */
 }
 header .media img:nth-child(1){
     top: 14vw;
