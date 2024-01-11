@@ -95,6 +95,13 @@ svg{
 
 /* Nav styles */
 nav{
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.fixed-nav{
     position: fixed;
     top: 0;
     left: 0;
@@ -332,11 +339,6 @@ nav .page-links a{
     opacity: 1;
     visibility: visible;
 }
-
-
-
-
-
 
 /* Start Header */
 header{
