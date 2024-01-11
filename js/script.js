@@ -146,10 +146,10 @@ addEventListener('mousemove', e => {
 
         console.log(i.tagName)
 
-        let top = style.marginTop;
-        let right = style.marginRight;
-        let bottom = style.marginBottom;
-        let left = style.marginLeft;
+        let top = style.marginTop ? style.marginTop : 0;
+        let right = style.marginRight ? style.marginRight : 0;
+        let bottom = style.marginBottom ? style.marginBottom : 0;
+        let left = style.marginLeft ? style.marginLeft : 0;
         let topProp = `margin-top`;
         let rightProp = `margin-right`;
         let bottomProp = `margin-bottom`;

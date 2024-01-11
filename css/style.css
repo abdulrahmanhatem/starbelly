@@ -344,6 +344,7 @@ header{
     height: 100vh;
     display: flex;
     position: relative;
+    overflow: hidden;
 }
 header aside {
     display: flex;
@@ -427,21 +428,13 @@ header .home search form input:focus {
 header .home search form input::placeholder{
     color: var(--white-50)
 }
-header img{
+header > img{
     position: absolute;
-}
-header .media {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
 }
 .mouse-move{
     /* transition: all ease-in-out .3s; */
 }
-header .media img:nth-child(1){
+header > img:nth-of-type(1){
     top: 14vw;
     left: 15vw;
     max-width: 11rem;
@@ -460,22 +453,17 @@ header .media img:nth-child(1){
         rotate: 0rad;
     }
 }
-header .media img:nth-child(1){
-    top: 14vw;
-    left: 15vw;
-    max-width: 11rem;
-}
-header .media img:nth-child(2){
+header > img:nth-of-type(2){
     top: 11vw;
     right: -11vw;
     max-width: 22rem;
 }
-header .media img:nth-child(3){
+header > img:nth-of-type(3){
     bottom: 1vw;
     left: -0.7vw;
     max-width: 8rem;
 }
-header .media img:nth-child(4){
+header > img:nth-of-type(4){
     top: 11vw;
     right: 25vw;
     max-width: 4rem;
