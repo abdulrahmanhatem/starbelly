@@ -844,7 +844,8 @@ footer .copyright{
     justify-content: center;
     border-radius: 50%;
     cursor: pointer;
-    transition: all 3s ease-in-out;
+    transition: 3s ease-in-out;
+    z-index: 1;
 }
 .scroll-up:hover{
     background: var(--gradient-image-to-left);
