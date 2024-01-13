@@ -31,6 +31,7 @@
     --red : #fc2547;
     --orange : #ff5a00;
     --gradient-image-to-right: linear-gradient(to right,#f32846 40%, #f8600e 100%);
+    --gradient-image-to-left: linear-gradient(to left,#f32846 40%, #f8600e 100%);
     --gradient-image-to-top: linear-gradient(to top,#f32846 40%, #f8600e 100%);
     --main-font: "Hoppins", sans-serif; 
     --grand-font: "Grand-Hotel", sans-serif; 
@@ -831,4 +832,23 @@ footer .copyright{
     font-family: var(--roboto-font);
     color: var(--white-90);
     font-size: .9rem;
+}
+.scroll-up{
+    background: var(--gradient-image-to-right);
+    position: fixed;
+    bottom: 1.5vw;
+    right: 1.5vw;
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 3s ease-in-out;
+}
+.scroll-up:hover{
+    background: var(--gradient-image-to-left);
+}
+.scroll-up svg{
+    fill: var(--white-100);
 }

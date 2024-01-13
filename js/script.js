@@ -144,8 +144,6 @@ addEventListener('mousemove', e => {
     movingItems.forEach(i => {
         let style = getComputedStyle(i, 'top')
 
-        console.log(i.tagName)
-
         let top = style.marginTop ? style.marginTop : 0;
         let right = style.marginRight ? style.marginRight : 0;
         let bottom = style.marginBottom ? style.marginBottom : 0;
@@ -179,4 +177,11 @@ addEventListener('mousemove', e => {
 })
 
 
-addEventListener("ons")
+
+addEventListener("wheel", e => {
+    // let old 
+    // if(window.screenY ){
+
+    // }
+    console.log(e)
+})
