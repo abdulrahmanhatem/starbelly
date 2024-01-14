@@ -57,6 +57,7 @@ html{
     scrollbar-color: var(--red) var(--black-20); 
     scrollbar-gutter: stable;
     scrollbar-width: 10px;
+    scroll-behavior: smooth;
 }
 body{
     margin: 0;
@@ -834,7 +835,7 @@ footer .copyright{
     font-size: .9rem;
 }
 .scroll-up{
-    background: var(--gradient-image-to-right);
+    background: var(--gradient-image-to-left);
     position: fixed;
     bottom: 1.5vw;
     right: 1.5vw;
@@ -844,12 +845,22 @@ footer .copyright{
     justify-content: center;
     border-radius: 50%;
     cursor: pointer;
-    transition: 3s ease-in-out;
-    z-index: 1;
 }
-.scroll-up:hover{
-    background: var(--gradient-image-to-left);
+.scroll-up::before{
+    background: var(--gradient-image-to-right);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    transition: .5s ease-in-out;
+    content: "";
+}
+.scroll-up:hover::before {
+    opacity: 0;
 }
 .scroll-up svg{
     fill: var(--white-100);
+    z-index: 1;
 }
