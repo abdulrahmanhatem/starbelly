@@ -110,6 +110,12 @@ svg{
     width: 1150px;
     margin: auto;
 }
+svg linearGradient .stop-1{
+    stop-color: var(--red);
+}
+svg linearGradient .stop-2{
+    stop-color: var(--orange);
+}
 
 /* Nav styles */
 nav{
@@ -821,6 +827,7 @@ article .description {
     fill: var(--white-90);
     width: 5.5rem;
     height: 5.5rem;
+    fill: url(#gradient);
 }
 .about-us .icons .title{
     padding-inline: 5rem;
@@ -891,4 +898,12 @@ footer .copyright{
 .scroll-up svg{
     fill: var(--white-100);
     z-index: 1;
+}
+.icon-motor{
+    background-color: red;
+    color: white;
+    font-size: 25px;
+}
+.icon-motor:before{
+    content: "\f618";
 }
