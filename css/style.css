@@ -515,6 +515,12 @@ header > img:nth-of-type(4){
 }
 .food-option .head svg{
     width: 1.8rem;
+    height: 1.8rem;
+    transition: all ease-in-out .25s;
+}
+.food-option .head svg:hover{
+    margin-block-start: -1.8rem;
+    height: calc(1.8rem + 1.8rem);
 }
 .food-option .head svg .fa-primary{ 
     fill: var(--red);
