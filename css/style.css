@@ -510,12 +510,17 @@ header > img:nth-of-type(4){
     flex: 0 1 33%;
     text-align: center;
 }
-
+.food-option .head .stats > * *{
+    cursor: pointer;
+}
 .food-option .head svg{
     width: 1.8rem;
-    /* background: linear-gradient(to right,#fc2547 50%, #ff5a00 100%); */
-    /* -webkit-background-clip: text; */
-    /* fill: transparent; */
+}
+.food-option .head svg .fa-primary{ 
+    fill: var(--red);
+}
+.food-option .head svg .fa-secondary{ 
+    fill: var(--orange);
 }
 .food-option .head .stats span{
     display: block;
