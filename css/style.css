@@ -79,7 +79,7 @@ svg{
     font-family: var(--grand-font);
 }
 .btn-magic{
-    background-image: linear-gradient(to right, #f57e3f 10%, #f5415e);
+    background-image: var(--gradient-image-to-left);
     color: var(--white-100);
     font-weight: 900;
     border: none;
@@ -88,8 +88,24 @@ svg{
     font-size: 1rem;
     font-family: var(--roboto-font);
     cursor: pointer;
+    position: relative;
+    z-index: 1;
 }
-
+.btn-magic::before{
+    background: var(--gradient-image-to-right);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    transition: .5s ease-in-out;
+    content: "";
+    z-index: -1;
+}
+.btn-magic:hover::before{
+    opacity: 0;
+}
 .container{
     width: 1150px;
     margin: auto;
@@ -868,7 +884,6 @@ footer .copyright{
     border-radius: 50%;
     transition: .5s ease-in-out;
     content: "";
-    
 }
 .scroll-up:hover::before {
     opacity: 0;
