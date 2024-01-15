@@ -518,7 +518,7 @@ header > img:nth-of-type(4){
     height: 1.8rem;
     transition: all ease-in-out .25s;
 }
-.food-option .head svg:hover{
+.food-option .head .stats > div:hover svg{
     margin-block-start: -1.8rem;
     height: calc(1.8rem + 1.8rem);
 }
