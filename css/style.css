@@ -856,6 +856,7 @@ footer .copyright{
     justify-content: center;
     border-radius: 50%;
     cursor: pointer;
+    z-index: 1;
 }
 .scroll-up::before{
     background: var(--gradient-image-to-right);
@@ -867,6 +868,7 @@ footer .copyright{
     border-radius: 50%;
     transition: .5s ease-in-out;
     content: "";
+    
 }
 .scroll-up:hover::before {
     opacity: 0;
