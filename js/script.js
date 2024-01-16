@@ -182,6 +182,9 @@ let aboutS = document.querySelector(".about-us");
 
 addEventListener("scroll", e => {
 
+    let nav = document.getElementsByTagName("nav")[0];
+    let navHeight = nav.clientHeight;
+
     let scrollY = window.scrollY;
 
     let homeSRect = homeS.getBoundingClientRect();
@@ -193,14 +196,12 @@ addEventListener("scroll", e => {
     let aboutSRect = aboutS.getBoundingClientRect();
     let aboutSTopScroll = aboutSRect.y;
 
-    if(scrollY  > homeSHeight){
-        let nav = document.getElementsByTagName("nav")[0];
-        let navHeight = nav.clientHeight;
+    if(scrollY  > (homeSHeight* .5)){
+        
         console.log(navHeight);
-        
-        nav.classList.add("fixed-nav");
-       
-        
+        nav.classList.add("fixed-nav");  
+    }else{ 
+        nav.classList.remove("fixed-nav");  
     }
 
      
