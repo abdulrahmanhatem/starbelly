@@ -124,16 +124,19 @@ nav{
     position: absolute;
     top: 0;
     left: 0;
+    transition: all ease-in-out .3s;
 }
 .fixed-nav{
-    position: fixed;
-    top: 0;
+    /* position: fixed; */
     left: 0;
+    top: -150px;
     width: 100vw;
-    overflow: visible;
+    opacity: 0;
+    /* overflow: visible; */
     z-index: 3;
-    box-sizing: border-box;
+    box-sizing: border-box; 
     background: rgb(28 28 28 / 87%);
+    
 }
 nav .container{
     display: flex;
@@ -822,12 +825,24 @@ article .description {
     align-items: center;
     flex: 0 1 33%;
     color: var(--white-60);
+    cursor: pointer;
 }
 .about-us .icons svg{
     fill: var(--white-90);
     width: 5.5rem;
     height: 5.5rem;
+}
+.about-us .icons div.active svg{
     fill: url(#gradient);
+    animation: icon-pulse .4s infinite alternate ease-in-out;
+}
+@keyframes icon-pulse {
+    0%{
+        scale: 1;
+    }   
+    100%{
+        scale: 1.2;
+    }
 }
 .about-us .icons .title{
     padding-inline: 5rem;

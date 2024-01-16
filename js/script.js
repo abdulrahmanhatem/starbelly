@@ -176,12 +176,50 @@ addEventListener('mousemove', e => {
     })
 })
 
+let homeS = document.querySelector("header");
+let downloadS = document.querySelector(".download-app");
+let aboutS = document.querySelector(".about-us");
 
+addEventListener("scroll", e => {
 
-addEventListener("wheel", e => {
-    // let old 
-    // if(window.screenY ){
+    let scrollY = window.scrollY;
 
-    // }
-    console.log(e)
+    let homeSRect = homeS.getBoundingClientRect();
+    let homeSHeight = homeSRect.height;
+
+    let downloadSRect = downloadS.getBoundingClientRect();
+    let downloadSTopScroll = downloadSRect.y;
+
+    let aboutSRect = aboutS.getBoundingClientRect();
+    let aboutSTopScroll = aboutSRect.y;
+
+    if(scrollY  > homeSHeight){
+        let nav = document.getElementsByTagName("nav")[0];
+        let navHeight = nav.clientHeight;
+        console.log(navHeight);
+        
+        nav.classList.add("fixed-nav");
+       
+        
+    }
+
+     
+    
+    
+
 })
+
+//About Us Active Icon
+let icons = document.querySelectorAll(".about-us .icons div")
+icons.forEach(i => {
+
+    i.addEventListener("mouseover", e => {
+        icons.forEach(r => {
+            r.classList.remove("active")
+        })
+        i.classList.add('active')
+        
+    }) 
+})
+
+
