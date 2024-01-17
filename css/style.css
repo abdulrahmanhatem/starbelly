@@ -155,6 +155,28 @@ nav ul{
 nav .page-links a{
     font-size: 1.2rem;
     letter-spacing: .05rem;
+    position: relative;
+    /* border-image: var(--gradient-image-to-right) 1;
+    border-block-end: 0.15rem solid; */
+}
+nav .page-links a.active::before{
+    border-block-end: 0.15rem solid;
+    border-image: var(--gradient-image-to-right) 1;
+    width: 0%;
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    content: "";
+    animation: animate-link-border .3s ease-in-out forwards ;
+
+}
+@keyframes animate-link-border{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
 }
 .account-links{
     align-items: center;

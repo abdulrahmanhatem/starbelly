@@ -183,24 +183,53 @@ let aboutS = document.querySelector(".about-us");
 addEventListener("scroll", e => {
 
     let nav = document.getElementsByTagName("nav")[0];
+    let navLinks = document.querySelectorAll("nav .page-links li a");
     let navHeight = nav.clientHeight;
 
     let scrollY = window.scrollY;
 
     let homeSRect = homeS.getBoundingClientRect();
     let homeSHeight = homeSRect.height;
+   
 
     let downloadSRect = downloadS.getBoundingClientRect();
     let downloadSTopScroll = downloadSRect.y;
+
+    console.log("downloadSRect.y => " + downloadSRect.y);
+    console.log("downloadSRect.y => " + downloadSRect.height);
+
+
+
 
     let aboutSRect = aboutS.getBoundingClientRect();
     let aboutSTopScroll = aboutSRect.y;
 
     if(scrollY  > (homeSHeight* .5)){
-        
-        console.log(navHeight);
         nav.classList.add("fixed-nav");  
+
+        if(scrollY >  (homeSHeight + 50) && downloadSTopScroll > 0){
+            
+            navLinks[0].classList.add("active")
+        }else{
+            navLinks[0].classList.remove("active")
+        }
+
+        // if(scrollY > 0 && aboutSTopScroll > 0){
+            
+        //     navLinks[1].classList.add("active")
+        // }else{
+        //     navLinks[1].classList.remove("active")
+        // }
+
+        // if(downloadSTopScroll > 0 && aboutSTopScroll > 0){
+            
+        //     navLinks[2].classList.add("active")
+        // }else{
+        //     navLinks[2].classList.remove("active")
+        // }
+
     }else{ 
+        navLinks[0].classList.remove("active")
         nav.classList.remove("fixed-nav");  
     }
 
