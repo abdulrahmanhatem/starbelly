@@ -397,7 +397,9 @@ header aside ul svg{
     fill: var(--white-100);
 }
 header .home{
-    flex-grow: 1;
+    position: absolute;
+    width: 100%;
+    top: 120px;
 }
 header .home .content {
     height: 50%;
