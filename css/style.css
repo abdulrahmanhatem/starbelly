@@ -110,6 +110,10 @@ svg{
     width: 1150px;
     margin: auto;
 }
+.row{
+    display: flex;
+    justify-content: space-between;
+}
 svg linearGradient .stop-1{
     stop-color: var(--red);
 }
@@ -586,7 +590,7 @@ header > img:nth-of-type(4){
 .food-option .gallery{
     flex-flow: row wrap;
 }
-.food-option article{
+.food-option .gallery > a{
     flex: 0 1 30%;
     background-color: var(--black-10);
     margin: 1.25%;
@@ -594,13 +598,13 @@ header > img:nth-of-type(4){
     overflow: hidden;
     cursor: pointer;
 }
-.food-option article:hover .title{
+.food-option .gallery > a:hover .title{
     color: transparent;
 }
-.food-option article:hover img{
+.food-option .gallery > a:hover img{
    scale: 1.1;
 }
-article .preperation-time{
+.gallery > a .preperation-time{
     position: absolute;
     background-image: var(--gradient-image-to-right);
     right: -1.8rem;
@@ -612,40 +616,36 @@ article .preperation-time{
     font-size: .8rem;
     z-index: 1;
 }
-article .preperation-time .digit{
+.gallery > a .preperation-time .digit{
     font-size: 1.1rem;
     font-weight: 900;
     line-height: .95;
 }
-.food-option article .title{
+.food-option .gallery > a .title{
     background-image: var(--gradient-image-to-right);
     background-clip: text;
     -webkit-background-clip: text;
     transition: all ease-in-out .3s;
 }
-article .img-holder{
+.gallery > a .img-holder{
     width: 100%;
     height: 72%;
     overflow: hidden;
 }
-article img{
+.gallery > a img{
     transition: all ease-in-out .3s;
 }
-article .details{
+.gallery > a .details{
     padding: 1.2rem;
 }
-.row{
-    display: flex;
-    justify-content: space-between;
-}
-article .details .title{
+.gallery > a .details .title{
     margin-block: 0;
 }
-article .details .rating svg{
+.gallery > a .details .rating svg{
     width: 1.1rem;
     fill: #f7db8b;
 }
-article .description {
+.gallery > a .description {
     margin-block: 0.8rem .5rem;
     height: 1rem;
     white-space: nowrap;
