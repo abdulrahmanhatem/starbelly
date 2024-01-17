@@ -195,14 +195,16 @@ addEventListener("scroll", e => {
     let downloadSRect = downloadS.getBoundingClientRect();
     let downloadSTopScroll = downloadSRect.y;
 
-    console.log("downloadSRect.y => " + downloadSRect.y);
-    console.log("downloadSRect.y => " + downloadSRect.height);
+    
+    // console.log("downloadSRect.height => " + downloadSRect.height);
 
 
 
 
     let aboutSRect = aboutS.getBoundingClientRect();
     let aboutSTopScroll = aboutSRect.y;
+
+    console.log(downloadSRect);
 
     if(scrollY  > (homeSHeight* .5)){
         nav.classList.add("fixed-nav");  
@@ -214,19 +216,19 @@ addEventListener("scroll", e => {
             navLinks[0].classList.remove("active")
         }
 
-        // if(scrollY > 0 && aboutSTopScroll > 0){
+        if(downloadSTopScroll < 0 && aboutSTopScroll > 0){
             
-        //     navLinks[1].classList.add("active")
-        // }else{
-        //     navLinks[1].classList.remove("active")
-        // }
+            navLinks[1].classList.add("active")
+        }else{
+            navLinks[1].classList.remove("active")
+        }
 
-        // if(downloadSTopScroll > 0 && aboutSTopScroll > 0){
+        if(aboutSTopScroll < 0){
             
-        //     navLinks[2].classList.add("active")
-        // }else{
-        //     navLinks[2].classList.remove("active")
-        // }
+            navLinks[2].classList.add("active")
+        }else{
+            navLinks[2].classList.remove("active")
+        }
 
     }else{ 
         navLinks[0].classList.remove("active")
