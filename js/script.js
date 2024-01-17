@@ -195,12 +195,6 @@ addEventListener("scroll", e => {
     let downloadSRect = downloadS.getBoundingClientRect();
     let downloadSTopScroll = downloadSRect.y;
 
-    
-    // console.log("downloadSRect.height => " + downloadSRect.height);
-
-
-
-
     let aboutSRect = aboutS.getBoundingClientRect();
     let aboutSTopScroll = aboutSRect.y;
 
@@ -234,11 +228,6 @@ addEventListener("scroll", e => {
         navLinks[0].classList.remove("active")
         nav.classList.remove("fixed-nav");  
     }
-
-     
-    
-    
-
 })
 
 //About Us Active Icon

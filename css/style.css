@@ -156,8 +156,6 @@ nav .page-links a{
     font-size: 1.2rem;
     letter-spacing: .05rem;
     position: relative;
-    /* border-image: var(--gradient-image-to-right) 1;
-    border-block-end: 0.15rem solid; */
 }
 nav .page-links a::before{
     border-block-end: 0.15rem solid;
@@ -594,6 +592,13 @@ header > img:nth-of-type(4){
     margin: 1.25%;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
+}
+.food-option article:hover .title{
+    color: transparent;
+}
+.food-option article:hover img{
+   scale: 1.1;
 }
 article .preperation-time{
     position: absolute;
@@ -605,14 +610,26 @@ article .preperation-time{
     text-align: center;
     font-family: var(--roboto-font);
     font-size: .8rem;
+    z-index: 1;
 }
 article .preperation-time .digit{
     font-size: 1.1rem;
     font-weight: 900;
     line-height: .95;
 }
-article img{
+.food-option article .title{
+    background-image: var(--gradient-image-to-right);
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: all ease-in-out .3s;
+}
+article .img-holder{
     width: 100%;
+    height: 72%;
+    overflow: hidden;
+}
+article img{
+    transition: all ease-in-out .3s;
 }
 article .details{
     padding: 1.2rem;
