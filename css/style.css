@@ -37,6 +37,19 @@
     --grand-font: "Grand-Hotel", sans-serif; 
     --roboto-font: "Roboto", sans-serif; 
 }
+/* Mouse Follow Styles*/
+.mouse-follow{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    border: .2rem solid var(--white-100);
+    z-index: 3;
+    transition: all ease .1s;
+} 
 /* Scroll bar Styles  */ 
 /* - Chrome and Safari */ 
 ::-webkit-scrollbar {

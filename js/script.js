@@ -181,7 +181,6 @@ let downloadS = document.querySelector(".download-app");
 let aboutS = document.querySelector(".about-us");
 
 addEventListener("scroll", e => {
-
     let nav = document.getElementsByTagName("nav")[0];
     let navLinks = document.querySelectorAll("nav .page-links li a");
     let navHeight = nav.clientHeight;
@@ -225,22 +224,37 @@ addEventListener("scroll", e => {
         }
 
     }else{ 
-        navLinks[0].classList.remove("active")
+        navLinks[0].classList.remove("active");
         nav.classList.remove("fixed-nav");  
+
+        
+        
     }
 })
 
 //About Us Active Icon
-let icons = document.querySelectorAll(".about-us .icons div")
+let icons = document.querySelectorAll(".about-us .icons div");
 icons.forEach(i => {
 
     i.addEventListener("mouseover", e => {
         icons.forEach(r => {
-            r.classList.remove("active")
+            r.classList.remove("active");
         })
-        i.classList.add('active')
+        i.classList.add('active');
         
     }) 
 })
 
+// Mouse Follow Effect
+let mouseFollow = document.querySelector('.mouse-follow');
+
+addEventListener("mousemove", e => {
+    requestAnimationFrame(() => this.animateMouseFollow(e))
+})
+
+function animateMouseFollow(e){
+    console.log(e);
+    mouseFollow.style.top = `${e.clientY - 12}px`;
+    mouseFollow.style.left = `${e.clientX - 12}px`
+}
 
