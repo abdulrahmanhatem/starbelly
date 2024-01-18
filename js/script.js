@@ -180,24 +180,21 @@ let homeS = document.querySelector("header");
 let downloadS = document.querySelector(".download-app");
 let aboutS = document.querySelector(".about-us");
 
+let homeSRect = homeS.getBoundingClientRect();
+let homeSHeight = homeSRect.height;
+   
+let downloadSRect = downloadS.getBoundingClientRect();
+let downloadSTopScroll = downloadSRect.y;
+
+let aboutSRect = aboutS.getBoundingClientRect();
+let aboutSTopScroll = aboutSRect.y;
+
 addEventListener("scroll", e => {
     let nav = document.getElementsByTagName("nav")[0];
     let navLinks = document.querySelectorAll("nav .page-links li a");
     let navHeight = nav.clientHeight;
 
     let scrollY = window.scrollY;
-
-    let homeSRect = homeS.getBoundingClientRect();
-    let homeSHeight = homeSRect.height;
-   
-
-    let downloadSRect = downloadS.getBoundingClientRect();
-    let downloadSTopScroll = downloadSRect.y;
-
-    let aboutSRect = aboutS.getBoundingClientRect();
-    let aboutSTopScroll = aboutSRect.y;
-
-    console.log(downloadSRect);
 
     if(scrollY  > (homeSHeight* .5)){
         nav.classList.add("fixed-nav");  
@@ -245,16 +242,34 @@ icons.forEach(i => {
     }) 
 })
 
-// Mouse Follow Effect
-let mouseFollow = document.querySelector('.mouse-follow');
 
-addEventListener("mousemove", e => {
-    requestAnimationFrame(() => this.animateMouseFollow(e))
-})
+let mouseFollow = document.querySelector('.mouse-follow');
+["mouseover", "mousemove"].forEach(ev => {
+    homeS.addEventListener(ev, e => {
+        
+    })
+});
+
+
+   
+        homeS.addEventListener("mousemove", e => {
+            requestAnimationFrame(() => this.animateMouseFollow(e))
+        })
+
+
+
+
+
 
 function animateMouseFollow(e){
-    console.log(e);
-    mouseFollow.style.top = `${e.clientY - 12}px`;
-    mouseFollow.style.left = `${e.clientX - 12}px`
-}
+    console.log("homeSHeight => " + homeSHeight);
+    console.log("window.scrollY => " + window.scrollY);
+    if(window.scrollY < 230){
+        mouseFollow.style.opacity = 1; 
+        mouseFollow.style.top = `${e.clientY - 12}px`;
+        mouseFollow.style.left = `${e.clientX - 12}px`;
+    }else{
+        mouseFollow.style.opacity = 0; 
+    }
 
+}
