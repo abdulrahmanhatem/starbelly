@@ -175,6 +175,9 @@ nav .page-links a{
     letter-spacing: .05rem;
     position: relative;
 }
+header a:hover body:has(.mouse-follow){
+   display: none;
+}
 nav .page-links a::before{
     border-block-end: 0.15rem solid;
     border-image: var(--gradient-image-to-right) 1;
@@ -185,7 +188,7 @@ nav .page-links a::before{
     content: "";
     transition: all ease-in-out .3s;
 }
-nav .page-links a.active::before{
+nav .page-links a.active::before, nav .page-links a:hover::before{
     width: 100%;
 }
 .account-links{
