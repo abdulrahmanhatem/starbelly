@@ -2,6 +2,22 @@ let slider = document.querySelector('.slider')
 let content = slider.querySelector('.content')
 let items = content.querySelectorAll('li');
 
+let homeS = document.querySelector("header");
+let homeLinks = homeS.querySelectorAll("a");
+
+let downloadS = document.querySelector(".download-app");
+let aboutS = document.querySelector(".about-us");
+
+let homeSRect = homeS.getBoundingClientRect();
+let homeSHeight = homeSRect.height;
+   
+let downloadSRect = downloadS.getBoundingClientRect();
+let downloadSTopScroll = downloadSRect.y;
+
+let aboutSRect = aboutS.getBoundingClientRect();
+let aboutSTopScroll = aboutSRect.y;
+
+
 // Create navigation Elements
 let navigation = document.createElement('ul');
 navigation.classList.add('navigation');
@@ -174,20 +190,17 @@ addEventListener('mousemove', e => {
 
         i.setAttribute("style", newStyle) 
     })
+
+    homeLinks.forEach(l => {
+        
+    })
+
+    
+
+
 })
 
-let homeS = document.querySelector("header");
-let downloadS = document.querySelector(".download-app");
-let aboutS = document.querySelector(".about-us");
 
-let homeSRect = homeS.getBoundingClientRect();
-let homeSHeight = homeSRect.height;
-   
-let downloadSRect = downloadS.getBoundingClientRect();
-let downloadSTopScroll = downloadSRect.y;
-
-let aboutSRect = aboutS.getBoundingClientRect();
-let aboutSTopScroll = aboutSRect.y;
 
 addEventListener("scroll", e => {
     let nav = document.getElementsByTagName("nav")[0];
@@ -252,14 +265,9 @@ let mouseFollow = document.querySelector('.mouse-follow');
 
 
    
-        homeS.addEventListener("mousemove", e => {
-            requestAnimationFrame(() => this.animateMouseFollow(e))
-        })
-
-
-
-
-
+homeS.addEventListener("mousemove", e => {
+    requestAnimationFrame(() => this.animateMouseFollow(e))
+})
 
 function animateMouseFollow(e){
     console.log("homeSHeight => " + homeSHeight);
