@@ -160,39 +160,26 @@ addEventListener('mousemove', e => {
     movingItems.forEach(i => {
         let style = getComputedStyle(i, 'top')
 
-        let top = style.marginTop ? style.marginTop : 0;
-        let right = style.marginRight ? style.marginRight : 0;
-        let bottom = style.marginBottom ? style.marginBottom : 0;
-        let left = style.marginLeft ? style.marginLeft : 0;
-        let topProp = `margin-top`;
-        let rightProp = `margin-right`;
-        let bottomProp = `margin-bottom`;
-        let leftProp = `margin-left`;
+        let top = style.marginTop;
+        let left = style.marginLeft ;
 
-        if (i.tagName === "IMG") {
+
+   
 
             top = style.top;
-            right = style.right;
-            bottom = style.bottom;
             left = style.left;
-            topProp = `top`;
-            rightProp = `right`;
-            bottomProp = `bottom`;
-            leftProp = `left`;
-        }
+    
         
         let newStyle = `
-            ${topProp}:${parseFloat(top) + y}px;
-            ${rightProp}:${parseFloat(right) + x}px;
-            ${bottomProp}:${parseFloat(bottom) - y}px;
-            ${leftProp}:${parseFloat(left) - x}px;
+            top:${parseFloat(top) + y}px;
+            left:${parseFloat(left) - x}px;
         `;
-
-        i.setAttribute("style", newStyle) 
+        requestAnimationFrame(() => i.setAttribute("style", newStyle) )
+        
     })
 
     homeLinks.forEach(l => {
-        
+
     })
 
     
@@ -256,28 +243,28 @@ icons.forEach(i => {
 })
 
 
-let mouseFollow = document.querySelector('.mouse-follow');
-["mouseover", "mousemove"].forEach(ev => {
-    homeS.addEventListener(ev, e => {
+// let mouseFollow = document.querySelector('.mouse-follow');
+// ["mouseover", "mousemove"].forEach(ev => {
+//     homeS.addEventListener(ev, e => {
         
-    })
-});
+//     })
+// });
 
 
    
-homeS.addEventListener("mousemove", e => {
-    requestAnimationFrame(() => this.animateMouseFollow(e))
-})
+// homeS.addEventListener("mousemove", e => {
+//     requestAnimationFrame(() => this.animateMouseFollow(e))
+// })
 
-function animateMouseFollow(e){
-    console.log("homeSHeight => " + homeSHeight);
-    console.log("window.scrollY => " + window.scrollY);
-    if(window.scrollY < 230){
-        mouseFollow.style.opacity = 1; 
-        mouseFollow.style.top = `${e.clientY - 12}px`;
-        mouseFollow.style.left = `${e.clientX - 12}px`;
-    }else{
-        mouseFollow.style.opacity = 0; 
-    }
+// function animateMouseFollow(e){
+//     console.log("homeSHeight => " + homeSHeight);
+//     console.log("window.scrollY => " + window.scrollY);
+//     if(window.scrollY < 230){
+//         mouseFollow.style.opacity = 1; 
+//         mouseFollow.style.top = `${e.clientY - 12}px`;
+//         mouseFollow.style.left = `${e.clientX - 12}px`;
+//     }else{
+//         mouseFollow.style.opacity = 0; 
+//     }
 
-}
+// }
