@@ -138,8 +138,8 @@
 /* Scroll bar Styles  */ 
 /* - Firefox */ 
 html{
-    scrollbar-gutter: stable;
-    scrollbar-width: 10px;
+    /* scrollbar-gutter: stable;
+    scrollbar-width: 10px; */
     scroll-behavior: smooth;
 }
 /* - Chrome and Safari */ 
@@ -153,9 +153,9 @@ html{
     background: var(--gradient-image-to-top);
     min-height: 25%;
 }
-::-webkit-scrollbar-thumb:hover{
+/* ::-webkit-scrollbar-thumb:hover{
     background: var(--gradient-image-to-top);
-}
+} */
 /* - Global Styles */ 
 body{
     margin: 0;
@@ -773,7 +773,7 @@ header > img:nth-of-type(4){
     width: 35%;
     margin: 3rem auto 6rem;
 }
-.testimonial{
+/* .testimonial{
     background-size: cover;
     background-position: center;
     position: relative;
@@ -816,7 +816,7 @@ header > img:nth-of-type(4){
     font-weight: 400;
     transform: translateX(40px);
     transition: all ease-in-out .5s;
-    /* background: #18181869; */
+    /* background: #18181869; 
 }
 .testimonial .slider .content li {
     text-align: center;
@@ -883,7 +883,7 @@ header > img:nth-of-type(4){
     line-height: 1.5;
     display: none;
     text-align: center;
-}
+} */
 .download-app{
     display: flex;
     flex-direction: column;
@@ -1067,4 +1067,7 @@ footer .copyright{
 }
 .icon-motor:before{
     content: "\f618";
+}
+@media (max-width: 1200){
+
 }
