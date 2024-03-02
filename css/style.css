@@ -960,9 +960,10 @@ header > img:nth-of-type(4){
     color: var(--white-50);
     line-height: 1.6;
 }
-.about-us .icons{
+.about-us .icons {
     display: flex;
     padding-inline: 2rem;
+
 }
 .about-us .icons > div{
     display: flex;
@@ -1068,9 +1069,9 @@ footer .copyright{
     content: "\f618";
 }
 
-@media (max-width: 1200){
+@media (max-width: 1200px){
     .container {
-        inline-size: 1119px;
+        inline-size: 100%;
         margin: auto;
     }
 }
