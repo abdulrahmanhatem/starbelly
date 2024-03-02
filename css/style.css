@@ -250,9 +250,11 @@ nav ul{
     margin: 0;
     padding: 0;
     display: flex;
-    flex: 0 1 35%;
     justify-content: space-between;
     align-items: center;
+}
+nav .page-links{
+    gap: 3rem;
 }
 nav .page-links a{
     font-size: 1.2rem;
@@ -548,8 +550,8 @@ header .home .content h1 {
     inset-inline-start: 0;
     position: absolute;
 }
-header .home .content p{
-    font-size: .95vw;
+header .home .content p {
+    font-size: .76rem;
     margin: 0;
 }
 header .home search{
@@ -708,6 +710,7 @@ header > img:nth-of-type(4){
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    block-size: fit-content;
 }
 .food-option .gallery > a:hover .title{
     color: transparent;
@@ -745,6 +748,7 @@ header > img:nth-of-type(4){
 }
 .gallery > a img{
     transition: all ease-in-out .3s;
+    inline-size: 100%;
 }
 .gallery > a .details{
     padding: 1.2rem;
@@ -1068,4 +1072,57 @@ footer .copyright{
 }
 .icon-motor:before{
     content: "\f618";
+}
+
+@media (max-width: 1200px){
+    html{
+        font-size: 80%;
+    }
+    .container {
+        inline-size: 90%;
+    }
+    .account-links .account ul, .account-links .cart-list{
+        inset-inline-end: -1rem;
+    }
+    .gallery > a .img-holder {
+        block-size: 70%;
+    }
+    nav .container {
+        padding: 1.3rem;
+    }
+    .gallery > a .details .rating svg {
+        inline-size: 0.8rem;
+    }
+    .about-us {
+        padding: 6rem 5rem;
+    }
+    .about-us .row {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-us .row > div:first-child p:last-child {
+        padding-inline-end: 0;
+    }
+    .about-us .icons {
+        padding-inline: 0;
+    }
+    .about-us .icons .title{
+        padding-inline: 2rem;
+    }
+}
+
+@media (max-width: 768px){
+    html{
+        font-size: 60%;
+    }
+    .container {
+        inline-size: 100%;
+    }
+    
+}
+
+@media (max-width: 640px){
+    html{
+        font-size: 60%;
+    }
 }
