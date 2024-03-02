@@ -205,7 +205,7 @@ svg{
     opacity: 0;
 }
 .container{
-    inline-size: 1150px;
+    max-inline-size: 1150px;
     margin: auto;
 }
 .row{
@@ -1068,11 +1068,4 @@ footer .copyright{
 }
 .icon-motor:before{
     content: "\f618";
-}
-
-@media (max-width: 1200px){
-    .container {
-        inline-size: 100%;
-        margin: auto;
-    }
 }
