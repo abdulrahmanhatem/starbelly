@@ -773,8 +773,8 @@ header > img:nth-of-type(4){
     justify-content: center;
 }
 .browse-more a {
-    inline-size: 35%;
-    margin: 3rem auto 6rem;
+    inline-size: 60%;
+    margin: 6rem auto;
 }
 /* .testimonial{
     background-size: cover;
@@ -887,11 +887,11 @@ header > img:nth-of-type(4){
     display: none;
     text-align: center;
 } */
-.download-app{
+.download-app {
     display: flex;
     flex-direction: column;
     background-image: url('../images/bg-2.jpg');
-    padding-block: 6rem;
+    padding-block-end: 6rem;
 }
 .download-app *{
     text-align: center;
@@ -905,9 +905,9 @@ header > img:nth-of-type(4){
     font-family: var(--roboto-font);
     font-weight: 300;
 }
-.download-app > p:nth-of-type(2){
+.download-app > p:nth-of-type(2) {
     font-size: 4rem;
-    inline-size: 33rem;
+    inline-size: 42%;
     margin: auto;
     line-height: 4rem;
 }
@@ -915,7 +915,7 @@ header > img:nth-of-type(4){
     display: flex;
     margin: auto;
     gap: 12vw;
-    margin-block-start: 10vw;
+    margin-block-start: 11rem;
 }
 .download-app .apps img{
     inline-size: 12rem;
@@ -1012,7 +1012,7 @@ footer {
 }
 footer .container{
     display: flex;
-    gap: 2vw;
+    gap: 2rem;
     flex-direction: column; 
 }
 footer .social-media{
@@ -1123,6 +1123,85 @@ footer .copyright{
 
 @media (max-width: 640px){
     html{
-        font-size: 60%;
+        font-size: 82%;
     }
+    .food-option .head, .food-option .gallery, .download-app .apps, .food-option .head .stats, .about-us .icons, .row{
+        flex-flow: column wrap;
+        text-align: center;
+        justify-content: center;
+    }
+    .food-option .head, .food-option .gallery, .download-app .apps, .food-option .head .stats{
+        flex-flow: column wrap;
+        text-align: center;
+        gap: 3rem;
+    }
+    .details .row{
+        text-align: start;
+    }
+    .food-option .head .text h2 {
+        padding-inline-end: 1rem;
+        margin-inline-start: 1rem;
+        margin-block: 4rem;
+    }
+    .browse-more a {
+        inline-size: 60%;
+        margin: 6rem auto;
+    }
+    .download-app > p:nth-of-type(2) {
+        inline-size: 90%;
+    }
+    .food-option .head .stats > * {
+        margin-block: 3rem;
+    }
+    .food-option .head svg {
+        inline-size: 4rem;
+        block-size: 4rem;
+    }
+    .food-option .gallery > a {
+        max-inline-size: 98%;
+    }
+    .download-app > p:first-child {
+        margin-block-start: 0;
+    }
+    .download-app .apps img {
+        inline-size: 80%;
+    }
+    .download-app > p:nth-of-type(2) {
+        font-size: 3rem;
+    }
+    .about-us {
+        padding: 6rem 0;
+    }
+    .about-us .row > div:first-child p:last-child{
+        font-size: 3.5rem;
+    }
+    .about-us .icons{
+        gap: 4rem;
+    }
+    .about-us {
+        margin-block-end: 100svh;
+    }
+    footer {
+        padding: 0;
+        block-size: 100svh;
+        display: flex;
+    }
+    footer .container {
+        gap: 3rem;
+    }
+    footer .social-media, footer .copyright {
+        justify-content: space-between;
+        gap: inherit;
+        width: 92%;
+        margin: auto;
+    }
+    footer .social-media svg {
+        inline-size: 100%;
+    }
+    footer .copyright {
+        font-size: 1.3rem;
+        text-align: center;
+        line-height: 2.1rem;
+    }
+    
 }
