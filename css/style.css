@@ -963,7 +963,8 @@ header > img:nth-of-type(4){
 .about-us .icons {
     display: flex;
     padding-inline: 2rem;
-
+    inline-size: 100%;
+    flex-wrap: wrap;
 }
 .about-us .icons > div{
     display: flex;
