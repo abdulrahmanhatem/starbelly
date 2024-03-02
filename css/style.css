@@ -1113,10 +1113,10 @@ footer .copyright{
 
 @media (max-width: 768px){
     html{
-        font-size: 60%;
+        font-size: 66%;
     }
-    .container {
-        inline-size: 100%;
+    header > img:nth-of-type(2) {
+        inset-block-start: 28%;
     }
     
 }
