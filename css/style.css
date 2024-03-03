@@ -539,10 +539,10 @@ header .home .content {
 header .home .content span, header .home .content p {
     color: var(--white-50);
 }
-.magic-text{
+.magic-text {
     position: relative;
     inline-size: 70%;
-    block-size: calc(2 * 7vw);
+    block-size: calc(2* 6rem);
 }
 header .home .content h1 {
     font-size: 3rem;
@@ -550,6 +550,7 @@ header .home .content h1 {
     inset-block-start: 0;
     inset-inline-start: 0;
     position: absolute;
+    line-height: 4rem;
 }
 header .home .content p {
     font-size: .76rem;
@@ -592,7 +593,7 @@ header > img{
     position: absolute;
 }
 .mouse-move{
-    transition: all ease-in-out .3s;
+    /* transition: all ease-in-out .3s; */
 }
 header > img:nth-of-type(1){
     inset-block-start: 14vw;
@@ -1082,6 +1083,9 @@ footer .copyright{
     .container {
         inline-size: 90%;
     }
+    .magic-text {
+        inline-size: 100%;
+    }
     .side-links .account ul, .side-links .cart-list{
         inset-inline-end: -1rem;
     }
@@ -1120,13 +1124,25 @@ footer .copyright{
         inset-block-start: 28%;
     }
     header .home .content {
-        margin: auto;
+        margin: 0 auto 5rem;
         font-size: 1.2rem;
     }
     header .home .content p {
         font-size: 1.1rem;
     }
-    
+    header .home .content {
+        inline-size: 50%;
+    }
+    header .home .content .magic-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    header .home .content h1 {
+        font-size: 3rem;
+        inline-size: 50%;
+        position: static;
+    }
 }
 
 @media (max-width: 640px){
@@ -1202,6 +1218,12 @@ footer .copyright{
         inline-size: 1.5rem;
         block-size: 1.5rem;
     }
+    header .home .content {
+        inline-size: 75%;
+    }
+    header .home .content h1 {
+        inline-size: 100%;
+    }
     .food-option .head, .food-option .gallery, .download-app .apps, .food-option .head .stats, .about-us .icons, .row{
         flex-flow: column wrap;
         text-align: center;
@@ -1212,17 +1234,7 @@ footer .copyright{
         text-align: center;
         gap: 3rem;
         align-items: center;
-    }
-    header .home .content {
-        inline-size: 70%;
-    }
-    .magic-text {
-        inline-size: 100%;
-    }
-    header .home .content h1 {
-        font-size: 3.5vw;
-        inline-size: 100%;
-    }
+    }  
     .details .row{
         text-align: start;
     }
