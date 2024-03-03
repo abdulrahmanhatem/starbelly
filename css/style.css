@@ -277,18 +277,19 @@ nav .page-links a::before{
 nav .page-links a.active::before, nav .page-links a:hover::before{
     inline-size: 100%;
 }
-.account-links{
+.side-links{
     align-items: center;
     align-self: stretch;
     display: flex;
     flex: 0 1 12%;
     justify-content: center;
+    gap: 1.3rem;
 }
-.account-links .cart {
-    margin-inline-end: 1.3rem;
+.side-links .cart {
+
     position: relative;
 }
-.account-links .cart .badge{
+.side-links .cart .badge{
     position: absolute;
     background: var(--red);
     color: var(--white-100);
@@ -303,17 +304,17 @@ nav .page-links a.active::before, nav .page-links a:hover::before{
     inset-block-start: -1.3rem;
     inset-inline-start: 0.8rem;
 }
-.account-links .account  {
+.side-links .account  {
     position: relative;
 }
-.account-links .account > svg, .account-links .cart > svg{
+.side-links .account > svg, .side-links .cart > svg{
     cursor: pointer;;
 }
-.account-links .account:hover ul {
+.side-links .account:hover ul {
     opacity: 1;
     visibility: visible;
 }
-.account-links .account ul, .account-links .cart-list{
+.side-links .account ul, .side-links .cart-list{
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -325,10 +326,10 @@ nav .page-links a.active::before, nav .page-links a:hover::before{
     visibility: hidden;
     z-index: 2;
 }
-.account-links .account ul li{
+.side-links .account ul li{
     inline-size: 100%;
 }
-.account-links .account ul a{
+.side-links .account ul a{
     background-color: var(--black-20);
     padding: 1rem;
     font-size: 1.1rem;
@@ -342,7 +343,7 @@ nav .page-links a.active::before, nav .page-links a:hover::before{
     transition: all ease-in-out .5s;
     position: relative;
 }
-.account-links .account ul a::before{
+.side-links .account ul a::before{
    content: "";
    background-image: var(--gradient-image-to-right);
    position: absolute;
@@ -354,30 +355,27 @@ nav .page-links a.active::before, nav .page-links a:hover::before{
    box-sizing: border-box;
    border-block-start: thin solid var(--black-10);
 }
-.account-links .account ul li:first-of-type a::before{
+.side-links .account ul li:first-of-type a::before{
     border-block-start: none;
 }
-.account-links .account ul a:hover {
+.side-links .account ul a:hover {
     background-color: transparent;
 }
-.account-links .account ul a:hover svg{
+.side-links .account ul a:hover svg{
     margin-inline-end: .4rem;
 }
-.account-links .account ul svg {
+.side-links .account ul svg {
     fill: var(--white-100);
     inline-size: 1rem;
     display: inline;
     block-size: 1rem;
     transition: all ease-in-out .4s;
 }
-.account-links svg{
+.side-links svg{
     fill: var(--white-100);
     inline-size: 1.2rem;
 }
-.account-links .cart {
-    position: relative;
-}
-.account-links .cart .cart-list {
+.side-links .cart .cart-list {
     display: flex;
     flex-direction: column;
     background-color: var(--black-20);
@@ -385,7 +383,7 @@ nav .page-links a.active::before, nav .page-links a:hover::before{
     padding: 2rem 1.5rem 3rem;
     z-index: 2;
 }
-.account-links .cart ul {
+.side-links .cart ul {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -394,35 +392,35 @@ nav .page-links a.active::before, nav .page-links a:hover::before{
     justify-content: flex-start;
     font-family: var(--roboto-font);
 }
-.account-links .cart ul::-webkit-scrollbar {
+.side-links .cart ul::-webkit-scrollbar {
     inline-size: .1rem;
 }
-.account-links .cart ul::-webkit-scrollbar-track {
+.side-links .cart ul::-webkit-scrollbar-track {
     background: var(--black-30);
     border-radius: .1rem;
 }
-.account-links .cart ul::-webkit-scrollbar-thumb {
+.side-links .cart ul::-webkit-scrollbar-thumb {
     background:var(--gradient-image-to-right);
 }
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
-.account-links .cart ul li{
+.side-links .cart ul li{
     inline-size: 100%;
     display: flex;
 }
-.account-links .cart ul li > a {
+.side-links .cart ul li > a {
     inline-size: 8vw;
     display: flex;
     align-items: center;
 }
-.account-links .cart ul img{
+.side-links .cart ul img{
     max-width: 100%;
 }
-.account-links .cart ul li .details{
+.side-links .cart ul li .details{
     padding: 1vw;
 }
-.account-links .cart .details .title a {
+.side-links .cart .details .title a {
     display: block;
     font-weight: 400;
     font-size: .95rem;
@@ -432,30 +430,30 @@ nav .page-links a.active::before, nav .page-links a:hover::before{
     -webkit-background-clip: text;
     transition: all ease-in-out .3s;
 }
-.account-links .cart .details .title a:hover{
+.side-links .cart .details .title a:hover{
     color: transparent;
 }
-.account-links .cart .details .price{
+.side-links .cart .details .price{
     margin-block: 0.5rem;
     font-size: .85rem;
     color: var(--white-50);
     font-family: var(--roboto-font);
     font-weight: 600;
 }
-.account-links .cart .details .new{
+.side-links .cart .details .new{
     margin-inline-end: .6rem;
 }
-.account-links .cart .details .old{
+.side-links .cart .details .old{
     text-decoration: line-through;
 }
-.account-links .cart ul li .quantity {
+.side-links .cart ul li .quantity {
     display: flex;
     justify-content: space-between;
 }
-.account-links .cart ul li .quantity span{
+.side-links .cart ul li .quantity span{
     cursor: pointer;
 }
-.account-links .cart ul li .quantity input{
+.side-links .cart ul li .quantity input{
     display: inline;
     max-width: 1vw;
     background: transparent;
@@ -466,12 +464,12 @@ nav .page-links a.active::before, nav .page-links a:hover::before{
     padding: 0.25vw 0.5vw;
     margin-inline: 0.2rem;
 }
-.account-links .cart ul li .quantity svg{
+.side-links .cart ul li .quantity svg{
     inline-size: 1rem;
     fill: var(--white-100);
     cursor: pointer;
 }
-.account-links .cart .total{
+.side-links .cart .total{
     text-align: center;
     margin-block: 1rem;
     font-size: 2rem;
@@ -481,12 +479,15 @@ nav .page-links a.active::before, nav .page-links a:hover::before{
     border-block-start: 0.1rem solid rgb(225 225 225 / 1%);
     padding-block-start: 2rem;
 }
-.account-links .cart .checkout{
+.side-links .cart .checkout{
     text-align: center;
 }
-.account-links .cart:hover .cart-list {
+.side-links .cart:hover .cart-list {
     opacity: 1;
     visibility: visible;
+}
+.side-links .phone-nav{
+    display: none;
 }
 
 /* Start Header */
@@ -1081,7 +1082,7 @@ footer .copyright{
     .container {
         inline-size: 90%;
     }
-    .account-links .account ul, .account-links .cart-list{
+    .side-links .account ul, .side-links .cart-list{
         inset-inline-end: -1rem;
     }
     .gallery > a .img-holder {
@@ -1132,8 +1133,42 @@ footer .copyright{
     html{
         font-size: 82%;
     }
+    .scroll-up{
+        display: none;
+    }
     header > img:nth-of-type(1) {
         display: none;
+    }
+    nav .page-links {
+        display: none;
+    }
+    .side-links .phone-nav{
+        display: block;
+    }
+    .side-links .phone-nav .phone-links{
+        display: none;
+    }
+    .side-links .phone-nav:hover .phone-links {
+        background-image: url("../images/serve.jpg");
+        background-size: cover;
+        position: fixed;
+        inset-block-start: 0;
+        inset-inline-end: 0;
+        inline-size: 100%;
+        block-size: 100%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .side-links .phone-nav:hover .phone-links > *{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .side-links .phone-nav:hover .phone-links .social-media{
+        flex-direction: row;
+        justify-content: center;
     }
     .food-option .head, .food-option .gallery, .download-app .apps, .food-option .head .stats, .about-us .icons, .row{
         flex-flow: column wrap;
