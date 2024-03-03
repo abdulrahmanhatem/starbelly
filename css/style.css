@@ -1160,15 +1160,35 @@ footer .copyright{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        gap: 3rem;
     }
     .side-links .phone-nav:hover .phone-links > *{
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .side-links .phone-nav:hover .phone-links .social-media{
+    .side-links .phone-links .list{
+        gap: 1.5rem;
+    }
+    .side-links .phone-links .list a {
+        font-size: 1.6rem;
+        font-weight: 900;
+        display: block;
+        scale: 1 1.2;
+    }
+    .side-links .phone-links .contact span {
+        font-size: 1.2rem;
+        letter-spacing: .1rem;
+    }
+    .side-links .phone-nav:hover .phone-links .social-media {
         flex-direction: row;
         justify-content: center;
+        gap: 3rem;
+    }
+    .side-links  .social-media svg {
+        fill: var(--white-100);
+        inline-size: 1.5rem;
+        block-size: 1.5rem;
     }
     .food-option .head, .food-option .gallery, .download-app .apps, .food-option .head .stats, .about-us .icons, .row{
         flex-flow: column wrap;
