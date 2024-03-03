@@ -181,7 +181,7 @@ svg{
     color: var(--white-100);
     font-weight: 900;
     border: none;
-    border-radius: 2rem;
+    border-radius: 3rem;
     padding: 1rem 3rem;
     font-size: 1rem;
     font-family: var(--roboto-font);
@@ -196,7 +196,7 @@ svg{
     inset-inline-start: 0;
     block-size: 100%;
     inline-size: 100%;
-    border-radius: 2rem;
+    border-radius: 3rem;
     transition: .5s ease-in-out;
     content: "";
     z-index: -1;
@@ -556,37 +556,43 @@ header .home .content p {
     font-size: .76rem;
     margin: 0;
 }
-header .home search{
+.home search{
     display: flex;
-    justify-content: center;
-    
+    justify-content: center; 
 }
-header .home search form{
+.phone-search{
+    display: none;
+}
+search form{
     display: flex;
     background-color: var(--black-30);
     inline-size: 75%;
     padding: .5rem;
     border-radius: 3rem;
 }
-header .home search form label{
+search form label{
     display: flex;
     padding: 1rem;
 }
-header .home search form label svg{
+search form label svg{
     inline-size: 1.2rem;
     fill: var(--white-50);
 }
-header .home search form input {
+search form .input-holder {
+    flex-grow: 1;
+    display: flex;
+}
+search form input {
     background: transparent;
     border: none;
     color: var(--white-70);
     font-size: 1.1rem;
     flex-grow: 1;
 }
-header .home search form input:focus {
+search form input:focus {
     outline: none;
 }
-header .home search form input::placeholder{
+search form input::placeholder{
     color: var(--white-50)
 }
 header > img{
@@ -595,14 +601,13 @@ header > img{
 .mouse-move{
     /* transition: all ease-in-out .3s; */
 }
-header > img:nth-of-type(1){
-    inset-block-start: 14vw;
-    inset-inline-start: 15vw;
+header > img:nth-of-type(1) {
+    inset-block-start: 10rem;
+    inset-inline-start: 14rem;
     max-width: 11rem;
     animation: move 6s alternate infinite ease-out;
     transition: all ease-in-out .3s;
 }
-
 @keyframes move {
     0%{
         rotate: 0rad;
@@ -617,19 +622,19 @@ header > img:nth-of-type(1){
     }
 }
 header > img:nth-of-type(2) {
-    inset-block-start: 22%;
-    inset-inline-start: 83%;
-    max-width: 27%;
+    inset-block-end: 16%;
+    inset-inline-end: -13%;
+    max-width: 30%;
 }
 header > img:nth-of-type(3){
-    inset-block-start: 66vh;
-    inset-inline-start: -0.7vw;
-    max-width: 10vw;
+    inset-block-end: 3%;
+    inset-inline-start: -0.08rem;
+    max-width: 7rem;
 }
 header > img:nth-of-type(4){
-    inset-block-start: 11vw;
-    inset-inline-start: 70vw;
-    max-width: 4.5vw;
+    inset-block-start: 10rem;
+    inset-inline-end: 20rem;
+    max-width: 4rem;
     animation: move 10s alternate infinite ease-out;
 }
 .food-option{
@@ -1121,7 +1126,12 @@ footer .copyright{
         font-size: 66%;
     }
     header > img:nth-of-type(2) {
-        inset-block-start: 28%;
+        inset-block-end: 12%;
+    }
+    header > img:nth-of-type(3) {
+        inset-inline-start: -.1rem;
+        max-width: 7rem;
+        inset-block-end: 4%;
     }
     header .home .content {
         margin: 0 auto 5rem;
@@ -1178,10 +1188,11 @@ footer .copyright{
         justify-content: center;
         gap: 3rem;
     }
-    .side-links .phone-nav:hover .phone-links > *{
+    .side-links .phone-nav:hover .phone-links > * {
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
     }
     .side-links .phone-links .close{
         position: absolute;
@@ -1218,11 +1229,68 @@ footer .copyright{
         inline-size: 1.5rem;
         block-size: 1.5rem;
     }
+    header aside {
+        display: none;
+    }
     header .home .content {
         inline-size: 75%;
+        z-index: 1;
     }
     header .home .content h1 {
+        inline-size: 100%;   
+    }
+    header .home search {
+        display: none;
+    }
+    .phone-search{
+        display: flex;
+    }
+    search form {
+        background-color: transparent;
+        flex-wrap: wrap;
         inline-size: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-block: 8rem 6rem;
+    }
+    search form .input-holder{
+        margin-block-end: 4rem;
+        border-block-end: .1rem solid var(--white-100);
+        inline-size: 100%;
+    }
+    search form input {
+        color: var(--black-40);
+        font-size: 1.2rem;
+        flex: 1 0 50%;
+        font-weight: 100;
+        inline-size: 100%;
+    }
+    search form label {
+        padding-inline-start: 0;
+    }
+    search .btn-magic {
+        flex: 1 0 100%;
+        padding: 1.7rem 1rem;
+        font-size: 1.2rem;
+    }
+    header > img:nth-of-type(4) {
+        inset-block-start: 4rem;
+        inset-inline-end: 11rem;
+        max-width: 5rem;
+        animation: move 5s alternate infinite ease-in-out;
+    }
+    @keyframes move {
+        0%{
+            rotate: 0rad;
+            translate: 0;
+        }
+        50%{
+            rotate: .3rad;
+            translate: -0.5rem -0.5rem;
+        }
+        100%{
+            rotate: 0rad;
+        }
     }
     .food-option .head, .food-option .gallery, .download-app .apps, .food-option .head .stats, .about-us .icons, .row{
         flex-flow: column wrap;
