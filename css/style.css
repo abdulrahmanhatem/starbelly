@@ -544,7 +544,7 @@ header .home .content span, header .home .content p {
     block-size: calc(2 * 7vw);
 }
 header .home .content h1 {
-    font-size: 3.5vw;
+    font-size: 3rem;
     font-weight: 100;
     inset-block-start: 0;
     inset-inline-start: 0;
@@ -699,9 +699,9 @@ header > img:nth-of-type(4){
 .food-option .head .stats span.title{
     letter-spacing: 0.03rem;
 }
-
-.food-option .gallery{
+.food-option .gallery {
     flex-flow: row wrap;
+    justify-content: center;
 }
 .food-option .gallery > a{
     flex: 0 1 30%;
@@ -1118,6 +1118,13 @@ footer .copyright{
     header > img:nth-of-type(2) {
         inset-block-start: 28%;
     }
+    header .home .content {
+        margin: auto;
+        font-size: 1.2rem;
+    }
+    header .home .content p {
+        font-size: 1.1rem;
+    }
     
 }
 
@@ -1125,15 +1132,29 @@ footer .copyright{
     html{
         font-size: 82%;
     }
+    header > img:nth-of-type(1) {
+        display: none;
+    }
     .food-option .head, .food-option .gallery, .download-app .apps, .food-option .head .stats, .about-us .icons, .row{
         flex-flow: column wrap;
         text-align: center;
         justify-content: center;
     }
-    .food-option .head, .food-option .gallery, .download-app .apps, .food-option .head .stats{
+    .food-option .head, .food-option .gallery, .download-app .apps, .food-option .head .stats {
         flex-flow: column wrap;
         text-align: center;
         gap: 3rem;
+        align-items: center;
+    }
+    header .home .content {
+        inline-size: 70%;
+    }
+    .magic-text {
+        inline-size: 100%;
+    }
+    header .home .content h1 {
+        font-size: 3.5vw;
+        inline-size: 100%;
     }
     .details .row{
         text-align: start;
@@ -1151,20 +1172,22 @@ footer .copyright{
         inline-size: 90%;
     }
     .food-option .head .stats > * {
-        margin-block: 3rem;
+        margin-block: 1rem;
     }
     .food-option .head svg {
         inline-size: 4rem;
         block-size: 4rem;
     }
     .food-option .gallery > a {
-        max-inline-size: 98%;
+        inline-size: 98%;
+        max-inline-size: 350px;
     }
     .download-app > p:first-child {
         margin-block-start: 0;
     }
     .download-app .apps img {
-        inline-size: 80%;
+        inline-size: 72%;
+        max-inline-size: 275px;
     }
     .download-app > p:nth-of-type(2) {
         font-size: 3rem;
@@ -1172,11 +1195,16 @@ footer .copyright{
     .about-us {
         padding: 6rem 0;
     }
+    .about-us .row {
+        inline-size: 85%;
+        margin: auto;
+    }
     .about-us .row > div:first-child p:last-child{
         font-size: 3.5rem;
     }
-    .about-us .icons{
+    .about-us .icons {
         gap: 4rem;
+        margin-block-start: 8rem;
     }
     .about-us {
         margin-block-end: 100svh;
@@ -1200,8 +1228,8 @@ footer .copyright{
     }
     footer .copyright {
         font-size: 1.3rem;
-        text-align: center;
         line-height: 2.1rem;
+        justify-content: center;
     }
     
 }
