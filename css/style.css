@@ -1167,6 +1167,18 @@ footer .copyright{
         flex-direction: column;
         align-items: center;
     }
+    .side-links .phone-links .close{
+        position: absolute;
+        inset-block-start: 3rem;
+        inset-inline-end: 4rem;
+    }
+    .side-links .phone-nav:hover .phone-links:has(.close:hover){
+        display: none;
+    }
+    .side-links .phone-links .close svg{
+        inline-size: 1.8rem;
+        block-size: 1.8rem;
+    }
     .side-links .phone-links .list{
         gap: 1.5rem;
     }
