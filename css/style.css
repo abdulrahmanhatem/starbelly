@@ -519,20 +519,20 @@ header aside ul {
 header aside ul svg{
     fill: var(--white-100);
 }
-header .home{
+header .home {
     position: absolute;
     inline-size: 100%;
-    inset-block-start: 120px;
+    inset-block-start: 10vh;
+    block-size: 90vh;
 }
 header .home .content {
-    block-size: 50%;
+    block-size: 65%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     inline-size: 30%;
     margin: auto;
-    font-size: .8rem;
     text-align: center;
     margin-block: 3vw 2rem;
 }
@@ -545,16 +545,16 @@ header .home .content span, header .home .content p {
     block-size: calc(2* 6rem);
 }
 header .home .content h1 {
-    font-size: 3rem;
+    font-size: 4.7rem;
     font-weight: 100;
     inset-block-start: 0;
     inset-inline-start: 0;
     position: absolute;
-    line-height: 4rem;
+    line-height: 5rem;
 }
 header .home .content p {
-    font-size: .76rem;
-    margin: 0;
+    margin-block-start: 5rem;
+    line-height: 2rem;
 }
 .home search{
     display: flex;
