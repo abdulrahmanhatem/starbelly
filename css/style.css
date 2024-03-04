@@ -535,22 +535,25 @@ header .home .content {
     margin: auto;
     text-align: center;
     margin-block: 3vw 2rem;
+    align-items: center;
 }
 header .home .content span, header .home .content p {
     color: var(--white-50);
 }
-.magic-text {
+header .home .content .magic-text {
     position: relative;
-    inline-size: 100%;
+    inline-size: 70%;
     block-size: calc(2* 6rem);
+    text-align: center;
 }
 header .home .content h1 {
-    font-size: 4.7rem;
+    font-size: 3.5vw;
     font-weight: 100;
     inset-block-start: 0;
     inset-inline-start: 0;
     position: absolute;
     line-height: 5rem;
+    margin: 3rem auto;
 }
 header .home .content p {
     margin-block-start: 5rem;
@@ -1209,7 +1212,6 @@ footer .copyright{
     }
     header .home .content h1 {
         font-size: 3rem;
-        inline-size: 50%;
         position: static;
     }
 }
