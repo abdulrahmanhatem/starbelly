@@ -1292,7 +1292,7 @@ footer .copyright{
         display: none;
     }
     header .home {
-        block-size: 80vh;
+        block-size: 75vh;
     }
     header .home .content {
         inline-size: 75%;
@@ -1336,9 +1336,9 @@ footer .copyright{
         font-size: 1.2rem;
     }
     header > img:nth-of-type(4) {
-        inset-block-start: 11%;
+        inset-block-start: 15%;
         inset-inline-end: 16%;
-        max-width: 10%;
+        max-width: 15%;
         animation: move 5s alternate infinite ease-in-out;
     }
     @keyframes move {
