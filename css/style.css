@@ -531,7 +531,7 @@ header .home .content {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    inline-size: 30%;
+    inline-size: 40%;
     margin: auto;
     text-align: center;
     margin-block: 3vw 2rem;
@@ -541,7 +541,7 @@ header .home .content span, header .home .content p {
 }
 .magic-text {
     position: relative;
-    inline-size: 70%;
+    inline-size: 100%;
     block-size: calc(2* 6rem);
 }
 header .home .content h1 {
@@ -602,9 +602,9 @@ header > img{
     /* transition: all ease-in-out .3s; */
 }
 header > img:nth-of-type(1) {
-    inset-block-start: 10rem;
-    inset-inline-start: 14rem;
-    max-width: 11rem;
+    inset-block-start: 28%;
+    inset-inline-start: 14%;
+    max-inline-size: 14%;
     animation: move 6s alternate infinite ease-out;
     transition: all ease-in-out .3s;
 }
@@ -631,10 +631,10 @@ header > img:nth-of-type(3){
     inset-inline-start: -0.08rem;
     max-width: 7rem;
 }
-header > img:nth-of-type(4){
-    inset-block-start: 10rem;
-    inset-inline-end: 20rem;
-    max-width: 4rem;
+header > img:nth-of-type(4) {
+    inset-block-start: 25%;
+    inset-inline-end: 24%;
+    max-width: 5%;
     animation: move 10s alternate infinite ease-out;
 }
 .food-option{
@@ -1173,20 +1173,31 @@ footer .copyright{
     .side-links .cart ul li .quantity .options span {
         font-size: 2rem;
     }
+    header > img:nth-of-type(1) {
+        inset-block-start: 26%;
+        inset-inline-start: 11%;
+        max-inline-size: 20%;
+    }
     header > img:nth-of-type(2) {
-        inset-block-end: 12%;
+        inset-block-end: 15%;
     }
     header > img:nth-of-type(3) {
         inset-inline-start: -.1rem;
         max-width: 7rem;
-        inset-block-end: 4%;
+        inset-block-end: 7%;
+    }
+    header > img:nth-of-type(4) {
+        inset-block-start: 30%;
+        inset-inline-end: 14%;
+        max-width: 8%;
     }
     header .home .content {
         margin: 0 auto 5rem;
         font-size: 1.2rem;
     }
     header .home .content p {
-        font-size: 1.1rem;
+        margin-block-start: 0;
+        line-height: 2rem;
     }
     header .home .content {
         inline-size: 50%;
@@ -1280,9 +1291,12 @@ footer .copyright{
     header aside {
         display: none;
     }
+    header .home {
+        block-size: 80vh;
+    }
     header .home .content {
         inline-size: 75%;
-        z-index: 1;
+        block-size: 100%;
     }
     header .home .content h1 {
         inline-size: 100%;   
@@ -1322,9 +1336,9 @@ footer .copyright{
         font-size: 1.2rem;
     }
     header > img:nth-of-type(4) {
-        inset-block-start: 4rem;
-        inset-inline-end: 11rem;
-        max-width: 5rem;
+        inset-block-start: 11%;
+        inset-inline-end: 16%;
+        max-width: 10%;
         animation: move 5s alternate infinite ease-in-out;
     }
     @keyframes move {
