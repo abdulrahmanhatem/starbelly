@@ -1125,6 +1125,54 @@ footer .copyright{
     html{
         font-size: 66%;
     }
+    .side-links .account ul{
+        inline-size: 12rem;
+    }
+    .side-links .account ul svg {
+        inline-size: 1.5rem;
+        block-size: 1.5rem;
+    }
+    .side-links .account ul a {
+        padding: 1rem 1.1rem;
+        font-size: 1.4rem;
+    }
+    .side-links .cart .cart-list {
+        padding: 2rem 1.5rem 3rem;
+        max-inline-size: 80vw;
+        inline-size: 20rem;
+        inset-inline-end: -5rem;
+    }
+    .side-links .cart ul {
+        max-height: 20rem;
+        gap: 1rem;
+    }
+    .side-links .cart ul li {
+        align-items: stretch;
+    }
+    .side-links .cart ul li > a {
+        inline-size: auto;
+    }
+    .side-links .cart ul li .options {
+        display: flex;
+        align-items: center;
+        gap: .2rem;
+    }
+    .side-links .cart ul li .quantity svg {
+        inline-size: 1.3rem;
+    }
+    .side-links .cart .details .title a {
+        font-size: 1.3rem;
+    }
+    .side-links .cart .details .price {
+        font-size: 1.2rem;
+    }
+    .side-links .cart ul li .quantity input {
+        max-width: 2rem;
+        padding: 0.1rem 0.2rem;
+    }
+    .side-links .cart ul li .quantity .options span {
+        font-size: 2rem;
+    }
     header > img:nth-of-type(2) {
         inset-block-end: 12%;
     }
