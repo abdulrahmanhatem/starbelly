@@ -1,3 +1,22 @@
+let phoneMenueIcon = document.querySelector(".side-links .phone-nav .show");
+let phoneMenue = document.querySelector(".side-links .phone-nav .phone-links");
+let phoneMenueClose = document.querySelector(".side-links .phone-nav .phone-links .close");
+let phoneMenueLinks = document.querySelectorAll(".side-links .phone-nav .phone-links .list a");
+
+phoneMenueIcon.addEventListener("click", () => {
+    phoneMenue.classList.add("active");
+})
+
+phoneMenueLinks.forEach(l => {
+    l.addEventListener("click", () => {
+        phoneMenue.classList.remove("active");
+    })
+})
+
+phoneMenueClose.addEventListener("click", () => {
+    phoneMenue.classList.remove("active");
+})
+
 let homeS = document.querySelector("header");
 let homeLinks = homeS.querySelectorAll("a");
 
@@ -120,37 +139,5 @@ icons.forEach(i => {
 
 // }
 
-// Loader 
-// let positions = [ 
-//     { 
-//         top: 0,
-//         left: 34
-//     },
-//     {
-//         top: 37,
-//         left: 74
-//     },
-//     {
-//         top:74,
-//         left: 36
-//     },
-//     {
-//         top: 37,
-//         left: 0
-//     }
-// ]
 
-// let spinnerDots = document.querySelectorAll(".spinner span");
-
-// for (let i = 0; i < spinnerDots.length; i++) {
-    
-//     const dot = spinnerDots[i];
-//     let count = 0;
-//     let position = positions[i+count]
-//     dot.style.top = `${position.top}%`;
-//     dot.style.left = `${position.left}%`;
-//     count++;
-
-    
-// }
 

@@ -261,9 +261,6 @@ nav .page-links a{
     letter-spacing: .05rem;
     position: relative;
 }
-header a:hover body:has(.mouse-follow){
-   display: none;
-}
 nav .page-links a::before{
     border-block-end: 0.15rem solid;
     border-image: var(--gradient-image-to-right) 1;
@@ -486,7 +483,7 @@ nav .page-links a.active::before, nav .page-links a:hover::before{
     opacity: 1;
     visibility: visible;
 }
-.side-links .phone-nav{
+.side-links .phone-nav, .side-links .phone-nav .phone-links{
     display: none;
 }
 
@@ -784,7 +781,7 @@ header > img:nth-of-type(4) {
 }
 .browse-more a {
     inline-size: 60%;
-    margin: 6rem auto;
+    margin: 6rem auto 0;
 }
 /* .testimonial{
     background-size: cover;
@@ -901,7 +898,7 @@ header > img:nth-of-type(4) {
     display: flex;
     flex-direction: column;
     background-image: url('../images/bg-2.jpg');
-    padding-block-end: 6rem;
+    padding-block: 11rem 6rem;
 }
 .download-app *{
     text-align: center;
@@ -1232,10 +1229,10 @@ footer .copyright{
     .side-links .phone-nav{
         display: block;
     }
-    .side-links .phone-nav .phone-links{
-        display: none;
+    .side-links .phone-nav .phone-links.active {
+        display: flex; 
     }
-    .side-links .phone-nav:hover .phone-links {
+    .side-links .phone-nav .phone-links {
         background-image: url("../images/serve.jpg");
         background-size: cover;
         position: fixed;
@@ -1244,12 +1241,11 @@ footer .copyright{
         inline-size: 100%;
         block-size: 100%;
         z-index: 2;
-        display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 3rem;
     }
-    .side-links .phone-nav:hover .phone-links > * {
+    .side-links .phone-nav .phone-links > * {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1259,9 +1255,7 @@ footer .copyright{
         position: absolute;
         inset-block-start: 3rem;
         inset-inline-end: 4rem;
-    }
-    .side-links .phone-nav:hover .phone-links:has(.close:hover){
-        display: none;
+        cursor: pointer;
     }
     .side-links .phone-links .close svg{
         inline-size: 1.8rem;
@@ -1280,12 +1274,12 @@ footer .copyright{
         font-size: 1.2rem;
         letter-spacing: .1rem;
     }
-    .side-links .phone-nav:hover .phone-links .social-media {
+    .side-links .phone-nav .phone-links .social-media {
         flex-direction: row;
         justify-content: center;
         gap: 3rem;
     }
-    .side-links  .social-media svg {
+    .side-links .social-media svg {
         fill: var(--white-100);
         inline-size: 1.5rem;
         block-size: 1.5rem;
