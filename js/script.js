@@ -20,44 +20,14 @@ phoneMenueClose.addEventListener("click", () => {
 let homeS = document.querySelector("header");
 let homeLinks = homeS.querySelectorAll("a");
 
-let downloadS = document.querySelector(".download-app");
-let aboutS = document.querySelector(".about-us");
+let downloadS = document.getElementById("download");
+let aboutS = document.getElementById("about");
 
 let homeSRect = homeS.getBoundingClientRect();
-let homeSHeight = homeSRect.height;
    
 let downloadSRect = downloadS.getBoundingClientRect();
-let downloadSTopScroll = downloadSRect.y;
 
 let aboutSRect = aboutS.getBoundingClientRect();
-let aboutSTopScroll = aboutSRect.y;
-
-
-
-
-/* Home Mouse Move Animations*/ 
-addEventListener('mousemove', e => {
-    var x = e.movementX * .01; // .01 => custom moving ratio
-    var y = e.movementY * .01; // .01 => custom moving ratio
-    var movingItems = document.querySelectorAll(".mouse-move");
-
-    movingItems.forEach(i => {
-        let style = getComputedStyle(i, 'top')
-
-        let top = style.marginTop;
-        let left = style.marginLeft ;
-            top = style.top;
-            left = style.left;
-    
-        
-        let newStyle = `
-            top:${parseFloat(top) + y}px;
-            left:${parseFloat(left) - x}px;
-        `;
-        requestAnimationFrame(() => i.setAttribute("style", newStyle) )
-        
-    })
-})
 
 addEventListener("scroll", e => {
     let nav = document.getElementsByTagName("nav")[0];
@@ -66,24 +36,28 @@ addEventListener("scroll", e => {
 
     let scrollY = window.scrollY;
 
-    if(scrollY  > (homeSHeight* .5)){
+    console.log(downloadSRect);
+    console.log(scrollY);
+
+    if(scrollY  > (homeSRect.height* .5)){
         nav.classList.add("fixed-nav");  
 
-        if(scrollY >  (homeSHeight + 50) && downloadSTopScroll > 0){
+        if(scrollY >  (homeSRect.height + 50) && scrollY < downloadSRect.y){
             
             navLinks[0].classList.add("active")
         }else{
             navLinks[0].classList.remove("active")
         }
 
-        if(downloadSTopScroll < 0 && aboutSTopScroll > 0){
+
+        if(scrollY > downloadSRect.y && scrollY < aboutSRect.y){
             
             navLinks[1].classList.add("active")
         }else{
             navLinks[1].classList.remove("active")
         }
 
-        if(aboutSTopScroll < 0){
+        if(scrollY > aboutSRect.y){
             
             navLinks[2].classList.add("active")
         }else{
@@ -112,6 +86,29 @@ icons.forEach(i => {
     }) 
 })
 
+/* Home Mouse Move Animations*/ 
+addEventListener('mousemove', e => {
+    var x = e.movementX * .01; // .01 => custom moving ratio
+    var y = e.movementY * .01; // .01 => custom moving ratio
+    var movingItems = document.querySelectorAll(".mouse-move");
+
+    movingItems.forEach(i => {
+        let style = getComputedStyle(i, 'top')
+
+        let top = style.marginTop;
+        let left = style.marginLeft ;
+            top = style.top;
+            left = style.left;
+    
+        
+        let newStyle = `
+            top:${parseFloat(top) + y}px;
+            left:${parseFloat(left) - x}px;
+        `;
+        requestAnimationFrame(() => i.setAttribute("style", newStyle) )
+        
+    })
+})
 
 // let mouseFollow = document.querySelector('.mouse-follow');
 // ["mouseover", "mousemove"].forEach(ev => {
